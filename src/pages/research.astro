@@ -8,16 +8,17 @@ import {RESEARCH_ICONS} from "@/data/researchIcons";
 const { research_areas } = profile;
 ---
 
-<Layout title="Research | Dr. Marie Curie">
+<Layout title="Research | Hiromichi Hagiwara">
   <div class="prose max-w-none">
-    <h1 class="text-3xl font-bold mb-8">Research Statement</h1>
+    <h1 class="text-3xl font-bold mb-8">Research</h1>
 
     <div class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">Low-rate DoS Attacks Using Signal Spoofing</h2>
       <p class="text-lg mb-6">
-        My research focuses on groundbreaking investigations into radioactivity and the discovery of new radioactive elements. Through meticulous experimental techniques and innovative methodologies, I aim to advance our understanding of radioactive phenomena and their applications in both physics and chemistry.
+        My research focuses on Low-rate DoS (LDoS) attacks targeting TCP connections, which exploit the predictable nature of TCP retransmission timers. These attacks have emerged as a significant security challenge in modern networks.
       </p>
       <p class="text-lg mb-6">
-        This interdisciplinary approach has led to significant discoveries, including the isolation of polonium and radium, contributing to the foundation of modern nuclear physics and radiochemistry.
+        While traditional LDoS attacks primarily use UDP traffic, I investigate TCP-based approaches that can evade protocol-based detection mechanisms. My work extends to Multipath TCP (MPTCP) environments, proposing distributed attack methods using multiple subflows.
       </p>
     </div>
 
@@ -52,18 +53,25 @@ const { research_areas } = profile;
 
     <List listTitle="Current Projects" listItems={[
       {
-        title: "Radioactivity Studies",
-        description: "Investigation of radioactive properties in uranium minerals and isolation of new radioactive elements."
+        title: "TCP LDoS Attack Optimization",
+        description: "Optimizing ACK transmission rates in TCP-based LDoS attacks using Optimistic ACKing techniques"
       },
       {
-        title: "Measurement Techniques",
-        description: "Development of precise methods for measuring radioactive emissions and their properties."
+        title: "MPTCP Attack Implementation",
+        description: "Developing distributed LDoS attack methods in multipath TCP environments"
+      },
+      {
+        title: "Attack Detection Analysis",
+        description: "Analyzing the stealth properties of TCP-based LDoS attacks compared to traditional methods"
       }
     ]} />
 
     <h2 class="text-2xl font-bold mb-6">Research Impact</h2>
-    <p class="text-lg mb-6">
-      My research has opened new frontiers in radioactivity studies, leading to practical applications in both scientific research and medical treatments. The discoveries have revolutionized our understanding of atomic structure and radioactive decay processes.
+    <p class="text-lg mb-4">
+      My research demonstrates that TCP-based LDoS attacks can effectively suppress target traffic while maintaining lower detection profiles. I have developed optimization techniques for ACK transmission rates and proven the feasibility of distributed attacks using MPTCP's Data Sequence Signal manipulation.
+    </p>
+    <p class="text-lg mb-4">
+      Current work focuses on evaluating attack effectiveness in realistic network environments using mininet simulations, analyzing the impact of subflow numbers and path delay variations on attack performance.
     </p>
   </div>
 </Layout>
