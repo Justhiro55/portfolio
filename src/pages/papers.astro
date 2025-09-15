@@ -15,8 +15,8 @@ const ALL_PAPERS = publications; // This will be replaced with dynamic data late
       {
         ALL_PAPERS.map((paper) => (
           <div class="card bg-base-200">
-            <div class="card-body">
-              <h2 class="card-title text-xl">
+            <div class="card-body pt-4">
+              <h2 class="card-title text-xl mb-2">
                 <a href={template.base + paper.link} class="hover:text-accent">
                   {paper.title}
                 </a>
@@ -25,7 +25,16 @@ const ALL_PAPERS = publications; // This will be replaced with dynamic data late
                 <span class="font-medium">Authors:</span>{" "}
                 <span set:html={highlightAuthor(paper.authors)} />
               </p>
-              <p class="text-sm mb-3">
+              {paper.tags && paper.tags.length > 0 && (
+                <div class="mb-2">
+                  {paper.tags.map(tag => (
+                    <span class="inline-block bg-blue-50 text-blue-700 border border-blue-200 text-sm px-2 py-0.5 rounded mr-2">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              )}
+              <p class="text-sm mb-2">
                 <span class="italic">{paper.journal}</span> • {paper.time}
               </p>
               <p class="text-sm text-base-content/80">{paper.abstract}</p>

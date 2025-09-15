@@ -26,6 +26,7 @@ export interface Publication {
   time: string;
   link?: string;
   abstract?: string;
+  tags?: string[];
 }
 
 export function isExperience(element: Experience | Education): element is Experience {

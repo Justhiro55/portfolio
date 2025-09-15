@@ -90,15 +90,16 @@ export const skills = [
 export const publications = [
 	{
 		title: 'A Proposal for LDoS Attack Method Using MPTCP Signal Manipulation',
-		authors: 'Hitomichi Hagiwara, et al',
+		authors: 'Hiromichi Hagiwara, Hiroshi Inamura, Shigemi Ishida',
 		journal: 'infsoc.org',
 		time: '2025年9月',
 		link: 'http://www.infsoc.org/conference/iwin2025/',
 		abstract: 'Proposal of an LDoS attack method using MPTCP signal manipulation. We improved upon conventional attack techniques and studied more effective attack methods.',
+		tags: ['Excellent Paper Award'],
 	},
 	{
 		title: 'Optimistic ACKing を利用した LDoS 攻撃効果の検証',
-		authors: '萩原 啓道, 他',
+		authors: '萩原 啓道, 稲村 浩, 石田 繁巳',
 		journal: 'pub.confit.atlas.jp',
 		time: '2024年9月',
 		link: 'https://pub.confit.atlas.jp/ja/event/society2024/presentation/A-7-02',
