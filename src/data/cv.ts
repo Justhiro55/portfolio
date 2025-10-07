@@ -8,10 +8,17 @@ export const experiences = [
 	},
 	{
 		company: '42Tokyo',
-		time: '2023年5月 - 現在',
+		time: '2025年10月 - 現在',
+		title: 'Second Circle',
+		location: 'Tokyo, Japan',
+		description: 'Second Circleでは、Cybersecurity / Operating Systems / Web & Mobile Development / Graphics & Video Games / Artificial Intelligence の5分野を選び専門的に学びます。',
+	},
+	{
+		company: '42Tokyo',
+		time: '2023年5月 - 2025年10月',
 		title: 'First Circle',
 		location: 'Tokyo, Japan',
-		description: '体系的にコンピューターサイエンスの基礎から学んでいます。bashの再実装、グラフィックの課題など幅広い課題に取り組んでいます。',
+		description: '体系的にコンピューターサイエンスの基礎から学んでいます。bashの再実装、グラフィックの課題など幅広い課題に取り組みました。',
 	},
 	{
 		company: 'franky株式会社',
