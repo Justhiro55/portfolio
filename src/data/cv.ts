@@ -7,20 +7,6 @@ export const experiences = [
 		description: 'Webアプリケーション開発',
 	},
 	{
-		company: '42Tokyo',
-		time: '2025年10月 - 現在',
-		title: 'Second Circle',
-		location: 'Tokyo, Japan',
-		description: 'Second Circleでは、Cybersecurity / Operating Systems / Web & Mobile Development / Graphics & Video Games / Artificial Intelligence の5分野を選び専門的に学びます。',
-	},
-	{
-		company: '42Tokyo',
-		time: '2023年5月 - 2025年10月',
-		title: 'First Circle',
-		location: 'Tokyo, Japan',
-		description: '体系的にコンピューターサイエンスの基礎から学んでいます。bashの再実装、グラフィックの課題など幅広い課題に取り組みました。',
-	},
-	{
 		company: 'franky株式会社',
 		time: '2024年4月 - 2024年10月',
 		title: 'Internship',
@@ -52,11 +38,25 @@ export const experiences = [
 
 export const education = [
 	{
+		school: '42Tokyo',
+		time: '2025年10月 - 現在',
+		degree: 'Second Circle',
+		location: 'Tokyo, Japan',
+		description: 'Second Circleでは、Cybersecurity / Operating Systems / Web & Mobile Development / Graphics & Video Games / Artificial Intelligence の5分野を選び専門的に学びます。',
+	},
+	{
 		school: '公立はこだて未来大学大学院',
 		time: '2023年4月 - 2026年3月',
 		degree: '博士前期課程 情報アーキテクチャ領域',
 		location: 'Hokkaido, Japan',
 		description: 'MPTCP(Multipath TCP)に関するネットワークセキュリティ研究を行っています。学部時の研究を発展させ、TCPを標的とする最適化したDoS攻撃手法について研究しています。',
+	},
+	{
+		school: '42Tokyo',
+		time: '2023年5月 - 2025年10月',
+		degree: 'First Circle',
+		location: 'Tokyo, Japan',
+		description: '体系的にコンピューターサイエンスの基礎から学んでいます。bashの再実装、グラフィックの課題など幅広い課題に取り組みました。',
 	},
 	{
 		school: '公立はこだて未来大学',
