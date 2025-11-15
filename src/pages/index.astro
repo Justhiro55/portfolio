@@ -2,16 +2,15 @@
 import Layout from '../layouts/Layout.astro'
 
 import { profile } from '@/settings'
-import { publications } from '@/data/cv'
+import { publications, projects } from '@/data/cv'
 import ProfilePictures from '@/assets/profile_pictures.jpg'
 import Hero from '@/components/ui/Hero.astro'
-import Grid from '@/components/ui/Grid.astro'
 import ArticleList from '@/components/ui/ArticleList.astro'
 
-const { fullName, title, institute, research_areas } = profile
+const { fullName, title, institute } = profile
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+// 最新のプロジェクト3つを取得
+const recentProjects = projects.slice(0, 3)
 ---
 
 <Layout>
@@ -25,9 +24,33 @@ const { fullName, title, institute, research_areas } = profile
 		/>
 	</section>
 
-	<!-- Research Areas -->
+	<!-- Recent Projects Section -->
 	<section class='py-12 border-b'>
-		<Grid gridTitle='Research Areas' gridItems={research_areas} />
+		<div class="flex items-center gap-3 mb-6">
+			<div class="w-1 h-8 rounded-full" style="background-color: #365C3B;"></div>
+			<h2 class="text-2xl font-bold text-base-content">Recent Projects</h2>
+		</div>
+		<div class="grid md:grid-cols-3 gap-6">
+			{recentProjects.map((project) => (
+				<div class="card bg-base-100 shadow-md hover:shadow-xl transition-all duration-300 border-2 border-base-300 hover:border-[#365C3B]/60 hover:-translate-y-1">
+					<div class="card-body p-4">
+						<h3 class="text-base font-bold mb-2 leading-tight">{project.title.split('—')[0].trim()}</h3>
+						<p class="text-xs text-base-content/60 mb-3">{project.time}</p>
+						<p class="text-sm text-base-content/80 leading-relaxed line-clamp-3 mb-3">{project.description}</p>
+						{project.links && project.links.github && (
+							<a href={project.links.github} class="text-sm font-medium hover:opacity-80 transition-opacity" style="color: #365C3B;" target="_blank" rel="noopener noreferrer">
+								View Project →
+							</a>
+						)}
+					</div>
+				</div>
+			))}
+		</div>
+		<div class="mt-6 text-center">
+			<a href="/works/" class="btn btn-sm gap-2 text-white border-0 hover:opacity-90 transition-opacity" style="background-color: #365C3B;">
+				View All Projects
+			</a>
+		</div>
 	</section>
 
 	<!-- Recent Publications -->
@@ -35,3 +58,12 @@ const { fullName, title, institute, research_areas } = profile
 		<ArticleList listTitle='Recent Publications' listItems={publications} />
 	</section>
 </Layout>
+
+<style>
+	.line-clamp-3 {
+		display: -webkit-box;
+		-webkit-line-clamp: 3;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+	}
+</style>

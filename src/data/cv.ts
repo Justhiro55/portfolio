@@ -113,3 +113,110 @@ export const publications = [
 		abstract: 'Optimistic ACKing機能を悪用したLDoS攻撃の効果を検証し、その脅威レベルと対策について分析を行いました。',
 	},
 ];
+
+export const projects = [
+	{
+		title: 'Kioku — エディタでスキマ時間に学べる単語帳拡張機能',
+		time: '2025年',
+		description: 'VSCode拡張として動作し、プログラミングの合間に単語をタイピングで覚えられる英単語学習アプリ。Ankiのような反復学習を取り入れ、エビングハウスの忘却曲線を利用して効率よく記憶を定着させることを目指しました。',
+		technologies: ['TypeScript', 'VSCode Extension API'],
+		links: {
+			github: 'https://github.com/Justhiro55/Kioku',
+			demo: 'https://marketplace.visualstudio.com/items?itemName=Justhiro55.kioku&ssr=false#review-details',
+		},
+		category: 'extension' as const,
+	},
+	{
+		title: 'flop — C/C++/Rust向けデバッグ出力切り替えツール',
+		time: '2025年10月',
+		description: 'printf や println! をコマンド一発でコメントアウト・有効化・削除できるデバッグ出力管理ツール。インタラクティブなTUIで直感的に操作できます。crates.ioにてパッケージを公開しています。',
+		technologies: ['Rust', 'TUI'],
+		links: {
+			github: 'https://github.com/Justhiro55/flop',
+			article: 'https://zenn.dev/justhiro/articles/7df05cb2064b75',
+			demo: 'https://crates.io/crates/flop-cli',
+		},
+		category: 'cli-tool' as const,
+	},
+	{
+		title: 'httpcat — HTTPステータスを猫で確認できるCLIツール',
+		time: '2025年11月',
+		description: 'HTTPリクエストのステータスコードに応じた猫画像をターミナルに表示するCLIツール。curlやwgetの代わりに、ステータス確認を楽しく行えます。ASCII表示にも対応。crates.ioにてパッケージを公開しています。',
+		technologies: ['Rust', 'CLI'],
+		links: {
+			github: 'https://github.com/Justhiro55/httpcat',
+			article: 'https://zenn.dev/justhiro/articles/a26e3cb1949f60',
+			demo: 'https://crates.io/crates/httpcat',
+		},
+		category: 'cli-tool' as const,
+	},
+	{
+		title: 'should-i — 意思決定を委ねるCLIツール',
+		time: '2025年11月',
+		description: '質問を投げかけるとYES/NO/MAYBEで答えてくれるCLIツール。yesno.wtf APIを使用し、回答と一緒にGIF画像も表示。--openオプションでGIFをブラウザで自動表示できます。日常の小さな決断から技術選定まで、宇宙に判断を委ねられます。',
+		technologies: ['Rust', 'CLI', 'API'],
+		links: {
+			github: 'https://github.com/Justhiro55/should-i',
+			article: 'https://zenn.dev/justhiro/articles/5351c337282175',
+			demo: 'https://crates.io/crates/should-i',
+		},
+		category: 'cli-tool' as const,
+	},
+	{
+		title: 'ft_transcendence — リアルタイム対戦Pongゲーム',
+		time: '2025年',
+		description: '42Tokyoの最終課題として開発したリアルタイム対戦型Pongゲーム。WebSocketを使用したリアルタイム通信、OAuth認証、チャット機能などを実装しました。',
+		technologies: ['TypeScript', 'NestJS', 'PostgreSQL', 'WebSocket', 'Docker'],
+		links: {
+			github: 'https://github.com/Justhiro55/ft_transcendence',
+		},
+		category: 'web-app' as const,
+	},
+	{
+		title: 'minishell — Bashシェルの再実装',
+		time: '2024年',
+		description: '42Tokyoの課題としてBashシェルを再実装。パイプ、リダイレクト、環境変数、シグナル処理などの基本的なシェル機能を実装しました。',
+		technologies: ['C', 'Unix/Linux'],
+		links: {
+			github: 'https://github.com/Justhiro55/minishell',
+			demo: 'https://www.youtube.com/watch?v=fUfyKEn5N5E',
+		},
+		category: 'other' as const,
+	},
+	{
+		title: '学内作品共有サービス開発',
+		time: '2024年 - 現在',
+		description: '高度ICT演習にて学内向けの作品共有サービスを開発。学生が自身のプロジェクトや作品を共有・発表できるプラットフォームを構築しています。',
+		technologies: ['Web Development'],
+		links: {
+			website: 'https://sites.google.com/view/funcyict/%E3%83%9B%E3%83%BC%E3%83%A0',
+		},
+		category: 'web-app' as const,
+	},
+	{
+		title: 'ConoHA VPSコントロールパネル改善',
+		time: '2024年8月',
+		description: 'GMOインターネット株式会社のkitaQサマーインターンにて開発。UI/UXを改善し初心者にもVPSを使いやすくするコントロールパネルの改善案を提案・開発し、最優秀賞を受賞しました。',
+		technologies: ['TypeScript', 'React', 'UI/UX Design'],
+		links: {
+			github: 'https://github.com/Justhiro55/ConoHA',
+		},
+		category: 'web-app' as const,
+	},
+	{
+		title: 'ビーコン・Spotify APIを使ったiOSアプリ開発',
+		time: '2021年 - 2022年',
+		description: 'ビーコン技術を利用して周りの人と好きな音楽を共有し、好きな曲を共有し合う楽しさを感じるiOSアプリを制作。チーム構成は3人で、スクラム開発手法を採用。バックエンド全般を主に担当し、SpotifyAPIとの通信などを実装しました。',
+		technologies: ['Swift', 'iOS', 'Beacon', 'Spotify API'],
+		category: 'mobile-app' as const,
+	},
+];
+
+export const achievements = [
+	{
+		title: 'GMOインターネット株式会社 kitaQサマーインターン',
+		time: '2024年8月',
+		description: 'ハッカソンにてUI/UXを改善し初心者にもVPSを使いやすくするコンパネの改善案を提案・開発し、最優秀賞を受賞しました。',
+		tags: ['最優秀賞'],
+	},
+];

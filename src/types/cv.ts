@@ -29,6 +29,21 @@ export interface Publication {
   tags?: string[];
 }
 
+export interface Project {
+  title: string;
+  time: string;
+  description: string;
+  technologies?: string[];
+  links?: {
+    github?: string;
+    demo?: string;
+    article?: string;
+    website?: string;
+  };
+  tags?: string[];
+  category?: 'cli-tool' | 'web-app' | 'mobile-app' | 'extension' | 'other';
+}
+
 export function isExperience(element: Experience | Education): element is Experience {
   return 'title' in element && 'company' in element;
 }
