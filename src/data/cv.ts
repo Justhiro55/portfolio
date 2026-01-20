@@ -123,6 +123,16 @@ export const publications = [
 
 export const projects = [
 	{
+		title: 'Mogu — AI献立提案アプリ',
+		time: '2026年1月',
+		description: 'AIを活用した献立提案アプリ。パーソナライズされた料理提案、買い物リスト自動生成、調理ガイド機能を実装。Flutter/DartによるiOS/Androidフロントエンド開発からFirebaseバックエンド構築まで担当。技育CAMP Vol.18 最優秀賞受賞。',
+		technologies: ['Flutter', 'Dart', 'Firebase', 'AI'],
+		links: {
+			website: 'https://x.com/geek_pjt/status/2012813374997017077?s=20',
+		},
+		category: 'mobile-app' as const,
+	},
+	{
 		title: 'Kioku — エディタでスキマ時間に学べる単語帳拡張機能',
 		time: '2025年',
 		description: 'VSCode拡張として動作し、プログラミングの合間に単語をタイピングで覚えられる英単語学習アプリ。Ankiのような反復学習を取り入れ、エビングハウスの忘却曲線を利用して効率よく記憶を定着させることを目指しました。',
