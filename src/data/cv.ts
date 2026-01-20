@@ -8,7 +8,7 @@ export const experiences = [
 	},
 	{
 		company: '株式会社HERP',
-		time: '2025年5月 - 現在',
+		time: '2025年5月 - 2025年12月',
 		title: 'Internship',
 		location: 'Tokyo, Japan',
 		description: 'Webアプリケーション開発',
