@@ -1,5 +1,12 @@
 export const experiences = [
 	{
+		company: '楽天グループ株式会社',
+		time: '2026年4月 -',
+		title: 'アプリケーションエンジニア（新卒）',
+		location: 'Tokyo, Japan',
+		description: '新卒入社予定',
+	},
+	{
 		company: '株式会社HERP',
 		time: '2025年5月 - 現在',
 		title: 'Internship',
@@ -184,10 +191,10 @@ export const projects = [
 		category: 'other' as const,
 	},
 	{
-		title: '学内作品共有サービス開発',
-		time: '2024年 - 現在',
-		description: '高度ICT演習にて学内向けの作品共有サービスを開発。学生が自身のプロジェクトや作品を共有・発表できるプラットフォームを構築しています。',
-		technologies: ['Web Development'],
+		title: 'Funport — 学内ポートフォリオサービス',
+		time: '2023年 - 2025年',
+		description: '大学公認プロジェクト「Funcy」にて学内ポートフォリオサービス「Funport」を約2年間開発。フロントエンド・バックエンドの実装からGCP（Cloud Run, Cloud Build）を用いたインフラ構築、Auth0認証基盤の導入まで担当。後輩への技術指導も経験。',
+		technologies: ['TypeScript', 'React', 'GCP', 'Auth0'],
 		links: {
 			website: 'https://sites.google.com/view/funcyict/%E3%83%9B%E3%83%BC%E3%83%A0',
 		},
@@ -213,6 +220,13 @@ export const projects = [
 ];
 
 export const achievements = [
+	{
+		title: '技育CAMP Vol.18',
+		time: '2026年1月',
+		description: 'AIを活用した献立提案アプリ「Mogu」を開発。AIによるパーソナライズされた料理提案、買い物リスト自動生成、調理ガイド機能を実装。Flutter/DartによるiOS/Androidのフロントエンド開発からFirebaseを用いたバックエンド構築まで横断的に開発に携わりました。',
+		tags: ['最優秀賞'],
+		link: 'https://x.com/geek_pjt/status/2012813371779715109',
+	},
 	{
 		title: 'GMOインターネット株式会社 kitaQサマーインターン',
 		time: '2024年8月',
