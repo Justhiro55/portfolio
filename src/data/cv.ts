@@ -113,7 +113,7 @@ export const publications = [
 	},
 	{
 		title: 'Optimistic ACKing を利用した LDoS 攻撃効果の検証',
-		authors: '萩原 啓道, 稲村 浩, 石田 繁巳',
+		authors: '萩原 啓道, 久末 瑠紅, 稲村 浩, 石田 繁巳',
 		journal: 'pub.confit.atlas.jp',
 		time: '2024年9月',
 		link: 'https://pub.confit.atlas.jp/ja/event/society2024/presentation/A-7-02',
