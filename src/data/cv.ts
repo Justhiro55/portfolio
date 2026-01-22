@@ -231,6 +231,13 @@ export const projects = [
 
 export const achievements = [
 	{
+		title: 'IWIN2025 - A Proposal for LDoS Attack Method Using MPTCP Signal Manipulation',
+		time: '2025年9月',
+		description: 'Proposal of an LDoS attack method using MPTCP signal manipulation. We improved upon conventional attack techniques and studied more effective attack methods.',
+		tags: ['Excellent Paper Award'],
+		link: 'http://www.infsoc.org/conference/iwin2025/',
+	},
+	{
 		title: '技育CAMP Vol.18',
 		time: '2026年1月',
 		description: 'AIを活用した献立提案アプリ「Mogu」を開発。AIによるパーソナライズされた料理提案、買い物リスト自動生成、調理ガイド機能を実装。Flutter/DartによるiOS/Androidのフロントエンド開発からFirebaseを用いたバックエンド構築まで横断的に開発に携わりました。',
