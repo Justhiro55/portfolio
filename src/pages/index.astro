@@ -2,10 +2,9 @@
 import Layout from '../layouts/Layout.astro'
 
 import { profile } from '@/settings'
-import { publications, projects } from '@/data/cv'
+import { projects, achievements } from '@/data/cv'
 import ProfilePictures from '@/assets/profile_pictures.jpg'
 import Hero from '@/components/ui/Hero.astro'
-import ArticleList from '@/components/ui/ArticleList.astro'
 
 const { fullName, title, institute } = profile
 
@@ -37,8 +36,8 @@ const recentProjects = projects.slice(0, 3)
 						<h3 class="text-base font-bold mb-2 leading-tight">{project.title.split('—')[0].trim()}</h3>
 						<p class="text-xs text-base-content/60 mb-3">{project.time}</p>
 						<p class="text-sm text-base-content/80 leading-relaxed line-clamp-3 mb-3">{project.description}</p>
-						{project.links && project.links.github && (
-							<a href={project.links.github} class="text-sm font-medium hover:opacity-80 transition-opacity" style="color: #365C3B;" target="_blank" rel="noopener noreferrer">
+						{project.links && (project.links.github || project.links.website || project.links.demo) && (
+							<a href={project.links.github || project.links.website || project.links.demo} class="text-sm font-medium hover:opacity-80 transition-opacity" style="color: #365C3B;" target="_blank" rel="noopener noreferrer">
 								View Project →
 							</a>
 						)}
@@ -53,9 +52,30 @@ const recentProjects = projects.slice(0, 3)
 		</div>
 	</section>
 
-	<!-- Publications -->
+	<!-- Achievements -->
 	<section class='py-12'>
-		<ArticleList listTitle='Publications' listItems={publications} />
+		<h2 class='text-3xl font-bold mb-8'>Achievements</h2>
+		<div class='space-y-6'>
+			{
+				achievements.map(item => (
+					<div class='p-6 rounded-lg text-base-content bg-base-200'>
+						<div class='flex items-start justify-between'>
+							<h3 class='text-xl font-semibold mb-2 flex-1'>{item.title}</h3>
+							{item.tags && item.tags.length > 0 && (
+								<div class='ml-4 shrink-0'>
+									{item.tags.map(tag => (
+										<span class='inline-block bg-blue-50 text-blue-700 border border-blue-200 text-sm px-2 py-0.5 rounded'>
+											{tag}
+										</span>
+									))}
+								</div>
+							)}
+						</div>
+						<p class='text-base-content/70'>{item.time}</p>
+					</div>
+				))
+			}
+		</div>
 	</section>
 </Layout>
 

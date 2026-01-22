@@ -105,7 +105,7 @@ export const publications = [
 	{
 		title: 'A Proposal for LDoS Attack Method Using MPTCP Signal Manipulation',
 		authors: 'Hiromichi Hagiwara, Hiroshi Inamura, Shigemi Ishida',
-		journal: 'infsoc.org',
+		journal: '19th International Workshop on Informatics (IWIN2025)',
 		time: '2025年9月',
 		link: 'http://www.infsoc.org/conference/iwin2025/',
 		abstract: 'Proposal of an LDoS attack method using MPTCP signal manipulation. We improved upon conventional attack techniques and studied more effective attack methods.',
@@ -231,7 +231,7 @@ export const projects = [
 
 export const achievements = [
 	{
-		title: 'IWIN2025 - A Proposal for LDoS Attack Method Using MPTCP Signal Manipulation',
+		title: '19th International Workshop on Informatics | A Proposal for LDoS Attack Method Using MPTCP Signal Manipulation',
 		time: '2025年9月',
 		description: 'Proposal of an LDoS attack method using MPTCP signal manipulation. We improved upon conventional attack techniques and studied more effective attack methods.',
 		tags: ['Excellent Paper Award'],
