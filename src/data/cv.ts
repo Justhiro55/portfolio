@@ -123,6 +123,17 @@ export const publications = [
 
 export const projects = [
 	{
+		title: 'Dear — 遠距離カップル専用レターアプリ',
+		time: '2026年2月',
+		description: '遠距離恋愛をしているカップル専用のレターアプリ。会えない時間に、気持ちを預けるアプリ。写真とコメントで日常を記録し、大切な人との思い出を残すことができます。',
+		technologies: ['Flutter', 'Dart'],
+		links: {
+			website: 'https://dear.knotwith.com/#/',
+			demo: 'https://apps.apple.com/jp/app/dear/id6757598623',
+		},
+		category: 'mobile-app' as const,
+	},
+	{
 		title: 'Mogu — AI献立提案アプリ',
 		time: '2026年1月',
 		description: 'AIを活用した献立提案アプリ。パーソナライズされた料理提案、買い物リスト自動生成、調理ガイド機能を実装。Flutter/DartによるiOS/Androidフロントエンド開発からFirebaseバックエンド構築まで担当。技育CAMP Vol.18 最優秀賞受賞。',
