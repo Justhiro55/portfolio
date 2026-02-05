@@ -139,7 +139,7 @@ export const projects = [
 		description: 'AIを活用した献立提案アプリ。パーソナライズされた料理提案、買い物リスト自動生成、調理ガイド機能を実装。Flutter/DartによるiOS/Androidフロントエンド開発からFirebaseバックエンド構築まで担当。技育CAMP Vol.18 最優秀賞受賞。',
 		technologies: ['Flutter', 'Dart', 'Firebase', 'AI'],
 		links: {
-			website: 'https://x.com/geek_pjt/status/2012813374997017077?s=20',
+			website: 'https://mogu.knotwith.com/#/',
 		},
 		category: 'mobile-app' as const,
 	},
