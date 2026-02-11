@@ -59,12 +59,12 @@ const recentProjects = projects.slice(0, 3)
 			{
 				achievements.map(item => (
 					<div class='p-6 rounded-lg text-base-content bg-base-200'>
-						<div class='flex items-start justify-between'>
-							<h3 class='text-xl font-semibold mb-2 flex-1'>{item.title}</h3>
+						<div class='flex flex-col md:flex-row md:items-start md:justify-between gap-3 mb-2'>
+							<h3 class='text-xl font-semibold flex-1'>{item.title}</h3>
 							{item.tags && item.tags.length > 0 && (
-								<div class='ml-4 shrink-0'>
+								<div class='flex gap-2 flex-wrap'>
 									{item.tags.map(tag => (
-										<span class='inline-block bg-blue-50 text-blue-700 border border-blue-200 text-sm px-2 py-0.5 rounded'>
+										<span class='px-3 py-1 text-xs font-semibold rounded-full' style="background-color: #E8854A; color: #FFFFFF;">
 											{tag}
 										</span>
 									))}
