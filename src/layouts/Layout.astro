@@ -37,8 +37,11 @@ const {
 		<div class={`bg-base-100 drawer lg:drawer-open ${template.menu_left ? 'drawer-end' : ''}`}>
 			<input id='my-drawer' type='checkbox' class='drawer-toggle' />
 			<!-- Drawer content -->
-            <div class='drawer-content bg-base-100'>
-				<div class='bg-base-100 z-50 text-base-content shadow-sm'>
+            <div class='drawer-content bg-base-100 relative overflow-hidden'>
+				<!-- Decorative background elements -->
+				<div class="absolute top-0 right-0 w-96 h-96 bg-brand-green/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+				<div class="absolute bottom-1/3 left-0 w-64 h-64 bg-brand-blue/5 rounded-full blur-3xl -translate-x-1/2 pointer-events-none"></div>
+				<div class='bg-base-100/80 backdrop-blur-sm z-50 text-base-content shadow-sm sticky top-0'>
 					<nav class='navbar'>
 						<div class='navbar-start'>
 							{template.menu_left &&
@@ -101,5 +104,27 @@ const {
 		margin: 0;
 		width: 100%;
 		height: 100%;
+	}
+	body {
+		font-family: 'Inter', system-ui, sans-serif;
+	}
+	h1, h2, h3, h4, h5, h6 {
+		font-family: 'Space Grotesk', system-ui, sans-serif;
+	}
+	/* Modal open state - blur sidebar */
+	body.modal-open .drawer-side {
+		filter: blur(8px);
+		pointer-events: none;
+		transition: filter 0.2s ease;
+	}
+	body.modal-open .drawer-content {
+		filter: blur(4px);
+		transition: filter 0.2s ease;
+	}
+	.drawer-side {
+		transition: filter 0.2s ease;
+	}
+	.drawer-content {
+		transition: filter 0.2s ease;
 	}
 </style>

@@ -33,6 +33,8 @@ export interface Project {
   title: string;
   time: string;
   description: string;
+  shortDescription?: string;
+  image?: string;
   technologies?: string[];
   links?: {
     github?: string;

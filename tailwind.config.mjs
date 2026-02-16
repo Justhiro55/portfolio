@@ -2,7 +2,22 @@
 export default {
     content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
     theme: {
-        extend: {},
+        extend: {
+            fontFamily: {
+                heading: ['"Space Grotesk"', 'system-ui', 'sans-serif'],
+                body: ['Inter', 'system-ui', 'sans-serif'],
+            },
+            colors: {
+                brand: {
+                    green: '#365C3B',
+                    blue: '#135389',
+                    orange: '#E8854A',
+                    red: '#CF2B0E',
+                    brown: '#746F57',
+                    purple: '#6F789D',
+                },
+            },
+        },
     },
     plugins: [require("@tailwindcss/typography"), require("daisyui")],
     daisyui: {

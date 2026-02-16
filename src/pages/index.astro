@@ -5,10 +5,11 @@ import { profile } from '@/settings'
 import { projects, achievements } from '@/data/cv'
 import ProfilePictures from '@/assets/profile_pictures.jpg'
 import Hero from '@/components/ui/Hero.astro'
+import { ExpandableCards } from '@/components/ui/ExpandableCard'
 
 const { fullName, title, institute } = profile
 
-// 最新のプロジェクト3つを取得
+// 最新のプロジェクト3つを取得（3カラムグリッドに合わせて）
 const recentProjects = projects.slice(0, 3)
 ---
 
@@ -26,52 +27,43 @@ const recentProjects = projects.slice(0, 3)
 	<!-- Recent Projects Section -->
 	<section class='py-12 border-b'>
 		<div class="flex items-center gap-3 mb-6">
-			<div class="w-1 h-8 rounded-full" style="background-color: #365C3B;"></div>
+			<div class="w-1 h-8 rounded-full bg-brand-green"></div>
 			<h2 class="text-2xl font-bold text-base-content">Recent Projects</h2>
 		</div>
-		<div class="grid md:grid-cols-3 gap-6">
-			{recentProjects.map((project) => (
-				<div class="card bg-base-100 shadow-md hover:shadow-xl transition-all duration-300 border-2 border-base-300 hover:border-[#365C3B]/60 hover:-translate-y-1">
-					<div class="card-body p-4">
-						<h3 class="text-base font-bold mb-2 leading-tight">{project.title.split('—')[0].trim()}</h3>
-						<p class="text-xs text-base-content/60 mb-3">{project.time}</p>
-						<p class="text-sm text-base-content/80 leading-relaxed line-clamp-3 mb-3">{project.description}</p>
-						{project.links && (project.links.github || project.links.website || project.links.demo) && (
-							<a href={project.links.github || project.links.website || project.links.demo} class="text-sm font-medium hover:opacity-80 transition-opacity" style="color: #365C3B;" target="_blank" rel="noopener noreferrer">
-								View Project →
-							</a>
-						)}
-					</div>
-				</div>
-			))}
-		</div>
+		<ExpandableCards projects={recentProjects} client:load />
 		<div class="mt-6 text-center">
-			<a href="/works/" class="btn btn-sm gap-2 text-white border-0 hover:opacity-90 transition-opacity" style="background-color: #365C3B;">
+			<a href="/works/" class="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium rounded-lg bg-base-200 hover:bg-base-300 text-base-content transition-colors">
 				View All Projects
+				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+					<path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
+				</svg>
 			</a>
 		</div>
 	</section>
 
 	<!-- Achievements -->
 	<section class='py-12'>
-		<h2 class='text-3xl font-bold mb-8'>Achievements</h2>
-		<div class='space-y-6'>
+		<div class="flex items-center gap-3 mb-6">
+			<div class="w-1 h-8 rounded-full bg-brand-orange"></div>
+			<h2 class="text-2xl font-bold text-base-content">Achievements</h2>
+		</div>
+		<div class='space-y-4'>
 			{
 				achievements.map(item => (
-					<div class='p-6 rounded-lg text-base-content bg-base-200'>
+					<div class='p-6 rounded-xl text-base-content bg-base-100 border-2 border-base-300 hover:border-brand-orange/60 hover:shadow-lg transition-all duration-300'>
 						<div class='flex flex-col lg:flex-row lg:items-start lg:justify-between gap-2 mb-2'>
-							<h3 class='text-xl font-semibold flex-1'>{item.title}</h3>
+							<h3 class='text-lg font-semibold flex-1'>{item.title}</h3>
 							{item.tags && item.tags.length > 0 && (
 								<div class='flex gap-2 flex-wrap'>
 									{item.tags.map(tag => (
-										<span class='px-3 py-1 text-xs font-semibold rounded-full' style="background-color: #E8854A; color: #FFFFFF;">
+										<span class='px-3 py-1 text-xs font-semibold rounded-full bg-brand-orange text-white'>
 											{tag}
 										</span>
 									))}
 								</div>
 							)}
 						</div>
-						<p class='text-base-content/70'>{item.time}</p>
+						<p class='text-base-content/60 text-sm'>{item.time}</p>
 					</div>
 				))
 			}

@@ -2,22 +2,7 @@
 import Layout from "@/layouts/Layout.astro";
 import { publications, projects, achievements } from "@/data/cv";
 import { highlightAuthor } from "@/lib/utils";
-
-const categoryLabels = {
-  'cli-tool': 'CLIツール',
-  'web-app': 'Webアプリケーション',
-  'mobile-app': 'モバイルアプリ',
-  'extension': 'エディタ拡張',
-  'other': 'その他',
-};
-
-const categoryColors = {
-  'cli-tool': { bg: '#135389', text: '#FFFFFF' },
-  'web-app': { bg: '#365C3B', text: '#FFFFFF' },
-  'mobile-app': { bg: '#E8854A', text: '#FFFFFF' },
-  'extension': { bg: '#6F789D', text: '#FFFFFF' },
-  'other': { bg: '#746F57', text: '#FFFFFF' },
-};
+import { ExpandableCards } from "@/components/ui/ExpandableCard";
 ---
 
 <Layout title="Works & Publications">
@@ -28,17 +13,17 @@ const categoryColors = {
     <!-- Publications Section -->
     <section class="mb-16">
       <div class="flex items-center gap-3 mb-8">
-        <div class="w-1 h-8 rounded-full" style="background-color: #135389;"></div>
+        <div class="w-1 h-8 rounded-full bg-brand-blue"></div>
         <h2 class="text-3xl font-bold text-base-content">Publications</h2>
       </div>
       <div class="grid gap-6">
         {publications.map((paper) => (
-          <div class="card bg-base-100 shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 border-2 border-base-300 hover:border-[#135389]/60">
+          <div class="card bg-base-100 shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 border-2 border-base-300 hover:border-brand-blue/60">
             <div class="card-body">
               <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-3 mb-3">
                 <h3 class="text-xl font-bold flex-1">
                   {paper.link ? (
-                    <a href={paper.link} class="hover:opacity-80 transition-opacity" target="_blank" rel="noopener noreferrer" style="color: #135389;">
+                    <a href={paper.link} class="hover:opacity-80 transition-opacity text-brand-blue" target="_blank" rel="noopener noreferrer">
                       {paper.title}
                     </a>
                   ) : (
@@ -48,7 +33,7 @@ const categoryColors = {
                 {paper.tags && paper.tags.length > 0 && (
                   <div class="flex gap-2 flex-wrap">
                     {paper.tags.map(tag => (
-                      <span class="px-3 py-1 text-xs font-semibold rounded-full" style="background-color: #E8854A; color: #FFFFFF;">
+                      <span class="px-3 py-1 text-xs font-semibold rounded-full bg-brand-orange text-white">
                         {tag}
                       </span>
                     ))}
@@ -70,7 +55,7 @@ const categoryColors = {
 
               {paper.link && (
                 <div class="card-actions justify-end">
-                  <a href={paper.link} class="btn btn-sm gap-2 text-white border-0 hover:opacity-90 transition-opacity" style="background-color: #135389;" target="_blank" rel="noopener noreferrer">
+                  <a href={paper.link} class="btn btn-sm gap-2 text-white border-0 hover:opacity-90 transition-opacity bg-brand-blue" target="_blank" rel="noopener noreferrer">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                     </svg>
@@ -87,100 +72,29 @@ const categoryColors = {
     <!-- Projects Section -->
     <section class="mb-16">
       <div class="flex items-center gap-3 mb-8">
-        <div class="w-1 h-8 rounded-full" style="background-color: #365C3B;"></div>
+        <div class="w-1 h-8 rounded-full bg-brand-green"></div>
         <h2 class="text-3xl font-bold text-base-content">Projects</h2>
       </div>
-      <div class="grid md:grid-cols-2 gap-6">
-        {projects.map((project) => (
-          <div class="card bg-base-100 shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 border-2 border-base-300 hover:border-[#365C3B]/60">
-            <div class="card-body">
-              <div class="flex items-start justify-between gap-3 mb-2">
-                <h3 class="text-lg font-bold flex-1 leading-tight">
-                  {project.title}
-                </h3>
-                {project.category && (
-                  <span
-                    class="text-xs font-semibold px-2.5 py-1 rounded-full shrink-0"
-                    style={`background-color: ${categoryColors[project.category].bg}; color: ${categoryColors[project.category].text};`}
-                  >
-                    {categoryLabels[project.category]}
-                  </span>
-                )}
-              </div>
-
-              <p class="text-xs text-base-content/60 mb-3">{project.time}</p>
-
-              <p class="text-sm text-base-content/80 leading-relaxed mb-4">{project.description}</p>
-
-              {project.technologies && project.technologies.length > 0 && (
-                <div class="flex flex-wrap gap-2 mb-4">
-                  {project.technologies.map((tech) => (
-                    <span class="px-2.5 py-1 text-xs rounded-full border" style="background-color: #FBFEFF; color: #30343A; border-color: #135389;">
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              )}
-
-              {project.links && Object.keys(project.links).length > 0 && (
-                <div class="flex flex-wrap gap-2 mt-auto">
-                  {project.links.github && (
-                    <a href={project.links.github} class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg border transition-all hover:shadow-md" style="background-color: #FBFEFF; color: #30343A; border-color: #135389;" target="_blank" rel="noopener noreferrer">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                      </svg>
-                      GitHub
-                    </a>
-                  )}
-                  {project.links.demo && (
-                    <a href={project.links.demo} class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg border transition-all hover:shadow-md" style="background-color: #FBFEFF; color: #30343A; border-color: #135389;" target="_blank" rel="noopener noreferrer">
-                      <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                      </svg>
-                      {project.links.demo.includes('marketplace.visualstudio.com') ? 'Marketplace' : project.links.demo.includes('apps.apple.com') ? 'App Store' : 'crates.io'}
-                    </a>
-                  )}
-                  {project.links.article && (
-                    <a href={project.links.article} class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg border transition-all hover:shadow-md" style="background-color: #FBFEFF; color: #30343A; border-color: #135389;" target="_blank" rel="noopener noreferrer">
-                      <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                      </svg>
-                      記事
-                    </a>
-                  )}
-                  {project.links.website && (
-                    <a href={project.links.website} class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg border transition-all hover:shadow-md" style="background-color: #FBFEFF; color: #30343A; border-color: #135389;" target="_blank" rel="noopener noreferrer">
-                      <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
-                      </svg>
-                      Website
-                    </a>
-                  )}
-                </div>
-              )}
-            </div>
-          </div>
-        ))}
-      </div>
+      <ExpandableCards projects={projects} client:load />
     </section>
 
     <!-- Achievements Section -->
     {achievements && achievements.length > 0 && (
       <section class="mb-12">
         <div class="flex items-center gap-3 mb-8">
-          <div class="w-1 h-8 rounded-full" style="background-color: #CF2B0E;"></div>
+          <div class="w-1 h-8 rounded-full bg-brand-red"></div>
           <h2 class="text-3xl font-bold text-base-content">Achievements</h2>
         </div>
         <div class="grid gap-6">
           {achievements.map((achievement) => (
-            <div class="card bg-base-100 shadow-lg hover:shadow-2xl hover:-translate-y-1 hover:border-[#CF2B0E]/60 transition-all duration-300 border-2 border-base-300">
+            <div class="card bg-base-100 shadow-lg hover:shadow-2xl hover:-translate-y-1 hover:border-brand-red/60 transition-all duration-300 border-2 border-base-300">
               <div class="card-body">
                 <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-3 mb-2">
                   <h3 class="text-xl font-bold flex-1">{achievement.title}</h3>
                   {achievement.tags && achievement.tags.length > 0 && (
                     <div class="flex gap-2 flex-wrap">
                       {achievement.tags.map(tag => (
-                        <span class="px-3 py-1 text-xs font-semibold rounded-full" style="background-color: #CF2B0E; color: #FFFFFF;">
+                        <span class="px-3 py-1 text-xs font-semibold rounded-full bg-brand-red text-white">
                           {tag}
                         </span>
                       ))}

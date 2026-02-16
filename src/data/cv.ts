@@ -123,9 +123,21 @@ export const publications = [
 
 export const projects = [
 	{
+		title: 'Writto — AI英語ライティング学習アプリ',
+		time: '2026年2月',
+		description: 'AIを活用した英語ライティング学習プラットフォーム。トピック生成から執筆、即時フィードバック、語彙記録、ミス分析まで一貫してサポート。OCRによる手書き英文の採点にも対応。',
+		shortDescription: 'AI英語ライティング学習Webアプリ',
+		technologies: ['React', 'TypeScript', 'Firebase', 'OpenAI API', 'Tailwind CSS'],
+		links: {
+			website: 'https://writto.knotwith.com/',
+		},
+		category: 'web-app' as const,
+	},
+	{
 		title: 'Dear — 遠距離カップル専用レターアプリ',
 		time: '2026年2月',
 		description: '遠距離恋愛をしているカップル専用のレターアプリ。会えない時間に、気持ちを預けるアプリ。写真とコメントで日常を記録し、大切な人との思い出を残すことができます。',
+		shortDescription: '遠距離カップル向けiOSアプリ',
 		technologies: ['Flutter', 'Dart'],
 		links: {
 			website: 'https://dear.knotwith.com/#/',
@@ -134,9 +146,33 @@ export const projects = [
 		category: 'mobile-app' as const,
 	},
 	{
+		title: 'Run Penguin — 心拍数可視化Wear OSアプリ',
+		time: '2026年2月',
+		description: '心拍数をペンギンのアニメーションで可視化するWear OSアプリ。心拍数に応じてペンギンの走る速度が変化し、サウナ利用時に数字を見ずに直感的に体調を把握できます。プリセットタイマー、心拍数に応じた背景グラデーション、140BPM超過時の触覚フィードバックを実装。',
+		shortDescription: 'サウナ用心拍数可視化Wear OSアプリ',
+		technologies: ['Kotlin', 'Jetpack Compose', 'Wear OS', 'Health Services API'],
+		links: {
+			article: 'https://zenn.dev/justhiro/articles/a0368dc7093f16',
+		},
+		category: 'mobile-app' as const,
+	},
+	{
+		title: 'tflap — ターミナルで遊べるFlappy Bird',
+		time: '2026年1月',
+		description: 'ターミナル上で動作するFlappy Birdゲーム。スムーズなアニメーション、カラフルなASCIIグラフィックス、ハイスコア保存機能を実装。crossterm crateを使用したクロスプラットフォーム対応。crates.ioで公開中。',
+		shortDescription: 'ターミナルFlappy Bird',
+		technologies: ['Rust', 'crossterm'],
+		links: {
+			github: 'https://github.com/Justhiro55/tflap',
+			demo: 'https://crates.io/crates/tflap',
+		},
+		category: 'cli-tool' as const,
+	},
+	{
 		title: 'Mogu — AI献立提案アプリ',
 		time: '2026年1月',
 		description: 'AIを活用した献立提案アプリ。パーソナライズされた料理提案、買い物リスト自動生成、調理ガイド機能を実装。Flutter/DartによるiOS/Androidフロントエンド開発からFirebaseバックエンド構築まで担当。技育CAMP Vol.18 最優秀賞受賞。',
+		shortDescription: 'AI献立提案モバイルアプリ',
 		technologies: ['Flutter', 'Dart', 'Firebase', 'AI'],
 		links: {
 			website: 'https://mogu.knotwith.com/#/',
@@ -147,6 +183,7 @@ export const projects = [
 		title: 'Kioku — エディタでスキマ時間に学べる単語帳拡張機能',
 		time: '2025年',
 		description: 'VSCode拡張として動作し、プログラミングの合間に単語をタイピングで覚えられる英単語学習アプリ。Ankiのような反復学習を取り入れ、エビングハウスの忘却曲線を利用して効率よく記憶を定着させることを目指しました。',
+		shortDescription: 'VSCode単語帳拡張機能',
 		technologies: ['TypeScript', 'VSCode Extension API'],
 		links: {
 			github: 'https://github.com/Justhiro55/Kioku',
@@ -158,6 +195,7 @@ export const projects = [
 		title: 'flop — C/C++/Rust向けデバッグ出力切り替えツール',
 		time: '2025年10月',
 		description: 'printf や println! をコマンド一発でコメントアウト・有効化・削除できるデバッグ出力管理ツール。インタラクティブなTUIで直感的に操作できます。crates.ioにてパッケージを公開しています。',
+		shortDescription: 'デバッグ出力管理CLIツール',
 		technologies: ['Rust', 'TUI'],
 		links: {
 			github: 'https://github.com/Justhiro55/flop',
@@ -170,6 +208,7 @@ export const projects = [
 		title: 'httpcat — HTTPステータスを猫で確認できるCLIツール',
 		time: '2025年11月',
 		description: 'HTTPリクエストのステータスコードに応じた猫画像をターミナルに表示するCLIツール。curlやwgetの代わりに、ステータス確認を楽しく行えます。ASCII表示にも対応。crates.ioにてパッケージを公開しています。',
+		shortDescription: 'HTTPステータス猫画像CLIツール',
 		technologies: ['Rust', 'CLI'],
 		links: {
 			github: 'https://github.com/Justhiro55/httpcat',
@@ -179,9 +218,23 @@ export const projects = [
 		category: 'cli-tool' as const,
 	},
 	{
+		title: 'http-catlog — ログ監視で猫画像を表示するCLIツール',
+		time: '2025年11月',
+		description: 'ログをリアルタイム監視し、HTTPエラーコード（4xx/5xx）を検出すると対応する猫画像をターミナルに表示するCLIツール。エラー監視を楽しくするhttpcatの発展版。crates.ioで公開中。',
+		shortDescription: 'ログ監視猫画像CLIツール',
+		technologies: ['Rust', 'tokio', 'notify'],
+		links: {
+			github: 'https://github.com/Justhiro55/catlog',
+			article: 'https://zenn.dev/justhiro/articles/049942c3b38437',
+			demo: 'https://crates.io/crates/http-catlog',
+		},
+		category: 'cli-tool' as const,
+	},
+	{
 		title: 'should-i — 意思決定を委ねるCLIツール',
 		time: '2025年11月',
 		description: '質問を投げかけるとYES/NO/MAYBEで答えてくれるCLIツール。yesno.wtf APIを使用し、回答と一緒にGIF画像も表示。--openオプションでGIFをブラウザで自動表示できます。日常の小さな決断から技術選定まで、宇宙に判断を委ねられます。',
+		shortDescription: 'YES/NO意思決定CLIツール',
 		technologies: ['Rust', 'CLI', 'API'],
 		links: {
 			github: 'https://github.com/Justhiro55/should-i',
@@ -194,6 +247,7 @@ export const projects = [
 		title: 'ft_transcendence — リアルタイム対戦Pongゲーム',
 		time: '2025年',
 		description: '42Tokyoの最終課題として開発したリアルタイム対戦型Pongゲーム。WebSocketを使用したリアルタイム通信、OAuth認証、チャット機能などを実装しました。',
+		shortDescription: 'リアルタイム対戦Pongゲーム',
 		technologies: ['TypeScript', 'NestJS', 'PostgreSQL', 'WebSocket', 'Docker'],
 		links: {
 			github: 'https://github.com/Justhiro55/ft_transcendence',
@@ -204,6 +258,7 @@ export const projects = [
 		title: 'minishell — Bashシェルの再実装',
 		time: '2024年',
 		description: '42Tokyoの課題としてBashシェルを再実装。パイプ、リダイレクト、環境変数、シグナル処理などの基本的なシェル機能を実装しました。',
+		shortDescription: 'Bashシェル再実装',
 		technologies: ['C', 'Unix/Linux'],
 		links: {
 			github: 'https://github.com/Justhiro55/minishell',
@@ -215,6 +270,7 @@ export const projects = [
 		title: 'Funport — 学内ポートフォリオサービス',
 		time: '2023年 - 2025年',
 		description: '大学公認プロジェクト「Funcy」にて学内ポートフォリオサービス「Funport」を約2年間開発。フロントエンド・バックエンドの実装からGCP（Cloud Run, Cloud Build）を用いたインフラ構築、Auth0認証基盤の導入まで担当。後輩への技術指導も経験。',
+		shortDescription: '学内ポートフォリオWebサービス',
 		technologies: ['TypeScript', 'React', 'GCP', 'Auth0'],
 		links: {
 			website: 'https://sites.google.com/view/funcyict/%E3%83%9B%E3%83%BC%E3%83%A0',
@@ -225,6 +281,7 @@ export const projects = [
 		title: 'ConoHA VPSコントロールパネル改善',
 		time: '2024年8月',
 		description: 'GMOインターネット株式会社のkitaQサマーインターンにて開発。UI/UXを改善し初心者にもVPSを使いやすくするコントロールパネルの改善案を提案・開発し、最優秀賞を受賞しました。',
+		shortDescription: 'VPSコンパネUI/UX改善',
 		technologies: ['TypeScript', 'React', 'UI/UX Design'],
 		links: {
 			github: 'https://github.com/Justhiro55/ConoHA',
@@ -235,6 +292,7 @@ export const projects = [
 		title: 'ビーコン・Spotify APIを使ったiOSアプリ開発',
 		time: '2021年 - 2022年',
 		description: 'ビーコン技術を利用して周りの人と好きな音楽を共有し、好きな曲を共有し合う楽しさを感じるiOSアプリを制作。チーム構成は3人で、スクラム開発手法を採用。バックエンド全般を主に担当し、SpotifyAPIとの通信などを実装しました。',
+		shortDescription: '音楽共有iOSアプリ',
 		technologies: ['Swift', 'iOS', 'Beacon', 'Spotify API'],
 		category: 'mobile-app' as const,
 	},
