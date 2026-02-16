@@ -21,13 +21,6 @@ export const experiences = [
 		description: 'ファッション系ECサイトの開発に携わり、主にバックエンドの実装や機能改善を担当しました。',
 	},
 	{
-		company: '東京大学 松尾研究室',
-		time: '2024年8月 - 2024年9月',
-		title: 'サマースクール - 深層生成モデル',
-		location: 'Tokyo, Japan',
-		description: '深層生成モデルの理論と実装について学び、最新の機械学習技術に関する研究に参加しました。',
-	},
-	{
 		company: 'GMOインターネット株式会社',
 		time: '2024年8月',
 		title: 'kitaQサマーインターン / Webアプリケーション開発',
@@ -50,6 +43,13 @@ export const education = [
 		degree: 'Second Circle',
 		location: 'Tokyo, Japan',
 		description: 'Second Circleでは、Cybersecurity / Operating Systems / Web & Mobile Development / Graphics & Video Games / Artificial Intelligence の5分野を選び専門的に学びます。',
+	},
+	{
+		school: '東京大学 松尾研究室',
+		time: '2024年8月 - 2024年9月',
+		degree: 'サマースクール - 深層生成モデル',
+		location: 'Tokyo, Japan',
+		description: '深層生成モデルの理論と実装について学び、最新の機械学習技術に関する研究に参加しました。',
 	},
 	{
 		school: '公立はこだて未来大学大学院',

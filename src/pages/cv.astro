@@ -47,23 +47,25 @@ if (publications.length > 0) {
 
 <Layout>
 	{
-		orderedEducations.length > 0 && (
+		orderedExperiences.length > 0 && (
 			<section class='mb-12'>
-				<h2 class='text-2xl font-bold mb-6 border-b pb-2'>
-					Education
-				</h2>
-				<CvTimeline elements={orderedEducations} colored={true} />
+				<div class="flex items-center gap-3 mb-6">
+					<div class="w-1 h-8 rounded-full bg-brand-green"></div>
+					<h2 class="text-2xl font-bold text-base-content">Experiences</h2>
+				</div>
+				<CvTimeline elements={orderedExperiences} colored={true} />
 			</section>
 		)
 	}
 
 	{
-		orderedExperiences.length > 0 && (
+		orderedEducations.length > 0 && (
 			<section class='mb-12'>
-				<h2 class='text-2xl font-bold mb-6 border-b pb-2'>
-					Experiences
-				</h2>
-				<CvTimeline elements={orderedExperiences} colored={true} />
+				<div class="flex items-center gap-3 mb-6">
+					<div class="w-1 h-8 rounded-full bg-brand-purple"></div>
+					<h2 class="text-2xl font-bold text-base-content">Education</h2>
+				</div>
+				<CvTimeline elements={orderedEducations} colored={true} />
 			</section>
 		)
 	}
@@ -71,9 +73,10 @@ if (publications.length > 0) {
 	{
 		orderedPublications.length > 0 && (
 			<section class='mb-12'>
-				<h2 class='text-2xl font-bold mb-6 border-b pb-2'>
-					Last publications
-				</h2>
+				<div class="flex items-center gap-3 mb-6">
+					<div class="w-1 h-8 rounded-full bg-brand-blue"></div>
+					<h2 class="text-2xl font-bold text-base-content">Publications</h2>
+				</div>
 				<PublicationsList elements={orderedPublications}/>
 			</section>
 		)
