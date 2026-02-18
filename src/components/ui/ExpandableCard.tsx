@@ -184,7 +184,7 @@ export function ExpandableCards({ projects, carousel = false }: ExpandableCardsP
             key="modal-overlay"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            exit={{ opacity: 0, transition: { duration: 0.15 } }}
+            exit={{ opacity: 0, transition: { duration: 0.1 } }}
             className="fixed inset-0 bg-black/70 backdrop-blur-md h-full w-full z-[100]"
             onClick={() => setActiveIndex(null)}
           />
@@ -194,10 +194,10 @@ export function ExpandableCards({ projects, carousel = false }: ExpandableCardsP
         {active && activeIndex !== null && (
           <motion.div
             key="modal-container"
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.95, transition: { duration: 0.15 } }}
-            className="fixed inset-0 grid place-items-center z-[101] p-4 md:p-8 lg:p-12 pointer-events-none"
+            initial={{ opacity: 0, scale: 0.97 }}
+            animate={{ opacity: 1, scale: 1, transition: { duration: 0.15 } }}
+            exit={{ opacity: 0, scale: 0.97, transition: { duration: 0.08 } }}
+            className="fixed inset-0 flex items-center justify-center z-[101] p-4 md:p-8 lg:p-12 pointer-events-none"
           >
             {/* Close button (mobile) */}
             <button
