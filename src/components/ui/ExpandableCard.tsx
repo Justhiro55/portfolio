@@ -207,11 +207,28 @@ export function ExpandableCards({ projects, carousel = false }: ExpandableCardsP
               <CloseIcon />
             </button>
 
-            {/* Navigation buttons */}
+            {/* Page indicator (mobile) - dots */}
+            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 md:hidden z-10 pointer-events-none">
+              <div className="flex items-center gap-1.5 px-3 py-2 rounded-full bg-base-100/90 backdrop-blur-sm">
+                {projects.map((_, idx) => (
+                  <span
+                    key={idx}
+                    className={cn(
+                      "rounded-full transition-all duration-200",
+                      idx === activeIndex
+                        ? "w-4 h-1.5 bg-brand-green"
+                        : "w-1.5 h-1.5 bg-base-content/30"
+                    )}
+                  />
+                ))}
+              </div>
+            </div>
+
+            {/* Navigation buttons - hidden on mobile */}
             {activeIndex > 0 && (
               <button
                 data-modal-nav
-                className="absolute left-1 md:left-2 lg:left-4 top-1/2 -translate-y-1/2 z-10 flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-full bg-base-100 border-2 border-base-300 hover:border-brand-green/60 hover:shadow-lg transition-all pointer-events-auto"
+                className="absolute left-2 lg:left-4 top-1/2 -translate-y-1/2 z-10 hidden md:flex items-center justify-center w-12 h-12 rounded-full bg-base-100 border-2 border-base-300 hover:border-brand-green/60 hover:shadow-lg transition-all pointer-events-auto"
                 onClick={(e) => { e.stopPropagation(); goToPrev(); }}
               >
                 <ChevronLeftIcon />
@@ -220,22 +237,34 @@ export function ExpandableCards({ projects, carousel = false }: ExpandableCardsP
             {activeIndex < projects.length - 1 && (
               <button
                 data-modal-nav
-                className="absolute right-1 md:right-2 lg:right-4 top-1/2 -translate-y-1/2 z-10 flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-full bg-base-100 border-2 border-base-300 hover:border-brand-green/60 hover:shadow-lg transition-all pointer-events-auto"
+                className="absolute right-2 lg:right-4 top-1/2 -translate-y-1/2 z-10 hidden md:flex items-center justify-center w-12 h-12 rounded-full bg-base-100 border-2 border-base-300 hover:border-brand-green/60 hover:shadow-lg transition-all pointer-events-auto"
                 onClick={(e) => { e.stopPropagation(); goToNext(); }}
               >
                 <ChevronRightIcon />
               </button>
             )}
 
-            <div
+            {/* Modal card with swipe support */}
+            <motion.div
               ref={ref}
-              className="w-full max-w-4xl flex flex-col bg-base-100 rounded-2xl overflow-hidden border-2 border-base-300 shadow-2xl pointer-events-auto"
+              drag="x"
+              dragConstraints={{ left: 0, right: 0 }}
+              dragElastic={0.2}
+              onDragEnd={(_, info) => {
+                const threshold = 50;
+                if (info.offset.x > threshold && activeIndex > 0) {
+                  goToPrev();
+                } else if (info.offset.x < -threshold && activeIndex < projects.length - 1) {
+                  goToNext();
+                }
+              }}
+              className="w-full max-w-4xl flex flex-col bg-base-100 rounded-2xl overflow-hidden border-2 border-base-300 shadow-2xl pointer-events-auto touch-pan-y"
             >
               {/* Header - fixed height */}
-              <div className="p-6 border-b border-base-300 shrink-0">
-                <div className="flex items-start justify-between gap-4">
+              <div className="p-4 md:p-6 border-b border-base-300 shrink-0">
+                <div className="flex items-start justify-between gap-3 md:gap-4">
                   <div className="flex-1 min-w-0">
-                    <h3 className="text-2xl font-bold text-base-content line-clamp-2">
+                    <h3 className="text-xl md:text-2xl font-bold text-base-content line-clamp-2">
                       {active.title}
                     </h3>
                     <p className="text-sm text-base-content/60 mt-1">
@@ -256,19 +285,19 @@ export function ExpandableCards({ projects, carousel = false }: ExpandableCardsP
               </div>
 
               {/* Content */}
-              <div className="p-6">
-                <p className="text-base text-base-content/80 leading-relaxed mb-6">
+              <div className="p-4 md:p-6">
+                <p className="text-sm md:text-base text-base-content/80 leading-relaxed mb-4 md:mb-6">
                   {active.description}
                 </p>
 
                 {active.technologies && active.technologies.length > 0 && (
-                  <div className="mb-6">
-                    <h4 className="text-sm font-semibold text-base-content mb-3">Technologies</h4>
-                    <div className="flex flex-wrap gap-2">
+                  <div className="mb-4 md:mb-6">
+                    <h4 className="text-sm font-semibold text-base-content mb-2 md:mb-3">Technologies</h4>
+                    <div className="flex flex-wrap gap-1.5 md:gap-2">
                       {active.technologies.map((tech) => (
                         <span
                           key={tech}
-                          className="px-3 py-1.5 text-sm rounded-full border bg-base-100 text-base-content border-brand-blue"
+                          className="px-2 md:px-3 py-1 md:py-1.5 text-xs md:text-sm rounded-full border bg-base-100 text-base-content border-brand-blue"
                         >
                           {tech}
                         </span>
@@ -279,12 +308,12 @@ export function ExpandableCards({ projects, carousel = false }: ExpandableCardsP
 
                 {active.links && Object.keys(active.links).length > 0 && (
                   <div>
-                    <h4 className="text-sm font-semibold text-base-content mb-3">Links</h4>
-                    <div className="flex flex-wrap gap-3">
+                    <h4 className="text-sm font-semibold text-base-content mb-2 md:mb-3">Links</h4>
+                    <div className="flex flex-wrap gap-2 md:gap-3">
                       {active.links.github && (
                         <a
                           href={active.links.github}
-                          className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg bg-base-200 hover:bg-base-300 text-base-content transition-colors"
+                          className="inline-flex items-center gap-1.5 md:gap-2 px-3 md:px-4 py-1.5 md:py-2 text-xs md:text-sm font-medium rounded-lg bg-base-200 hover:bg-base-300 text-base-content transition-colors"
                           target="_blank"
                           rel="noopener noreferrer"
                         >
@@ -295,7 +324,7 @@ export function ExpandableCards({ projects, carousel = false }: ExpandableCardsP
                       {active.links.website && (
                         <a
                           href={active.links.website}
-                          className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg bg-brand-green text-white hover:opacity-90 transition-opacity"
+                          className="inline-flex items-center gap-1.5 md:gap-2 px-3 md:px-4 py-1.5 md:py-2 text-xs md:text-sm font-medium rounded-lg bg-brand-green text-white hover:opacity-90 transition-opacity"
                           target="_blank"
                           rel="noopener noreferrer"
                         >
@@ -306,7 +335,7 @@ export function ExpandableCards({ projects, carousel = false }: ExpandableCardsP
                       {active.links.demo && (
                         <a
                           href={active.links.demo}
-                          className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg bg-brand-blue text-white hover:opacity-90 transition-opacity"
+                          className="inline-flex items-center gap-1.5 md:gap-2 px-3 md:px-4 py-1.5 md:py-2 text-xs md:text-sm font-medium rounded-lg bg-brand-blue text-white hover:opacity-90 transition-opacity"
                           target="_blank"
                           rel="noopener noreferrer"
                         >
@@ -317,7 +346,7 @@ export function ExpandableCards({ projects, carousel = false }: ExpandableCardsP
                       {active.links.article && (
                         <a
                           href={active.links.article}
-                          className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg bg-base-200 hover:bg-base-300 text-base-content transition-colors"
+                          className="inline-flex items-center gap-1.5 md:gap-2 px-3 md:px-4 py-1.5 md:py-2 text-xs md:text-sm font-medium rounded-lg bg-base-200 hover:bg-base-300 text-base-content transition-colors"
                           target="_blank"
                           rel="noopener noreferrer"
                         >
@@ -329,7 +358,7 @@ export function ExpandableCards({ projects, carousel = false }: ExpandableCardsP
                   </div>
                 )}
               </div>
-            </div>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
