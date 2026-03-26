@@ -13,6 +13,7 @@ interface Project {
   shortDescription?: string;
   image?: string;
   technologies?: string[];
+  tags?: string[];
   category?: ProjectCategory;
   links?: {
     github?: string;
@@ -271,16 +272,23 @@ export function ExpandableCards({ projects, carousel = false }: ExpandableCardsP
                       {active.time}
                     </p>
                   </div>
-                  {active.category && (
-                    <span
-                      className={cn(
-                        "text-xs font-semibold px-3 py-1.5 rounded-full shrink-0",
-                        categoryClasses[active.category]
-                      )}
-                    >
-                      {categoryLabels[active.category]}
-                    </span>
-                  )}
+                  <div className="flex items-center gap-2 flex-wrap shrink-0">
+                    {active.tags && active.tags.length > 0 && active.tags.map(tag => (
+                      <span key={tag} className="text-xs font-semibold px-3 py-1.5 rounded-full bg-brand-orange text-white">
+                        {tag}
+                      </span>
+                    ))}
+                    {active.category && (
+                      <span
+                        className={cn(
+                          "text-xs font-semibold px-3 py-1.5 rounded-full",
+                          categoryClasses[active.category]
+                        )}
+                      >
+                        {categoryLabels[active.category]}
+                      </span>
+                    )}
+                  </div>
                 </div>
               </div>
 
@@ -340,7 +348,7 @@ export function ExpandableCards({ projects, carousel = false }: ExpandableCardsP
                           rel="noopener noreferrer"
                         >
                           <ExternalIcon />
-                          {active.links.demo.includes('marketplace') ? 'Marketplace' : active.links.demo.includes('apple') ? 'App Store' : active.links.demo.includes('crates.io') ? 'crates.io' : 'Demo'}
+                          {active.links.demo.includes('marketplace') ? 'Marketplace' : active.links.demo.includes('apple') ? 'App Store' : active.links.demo.includes('crates.io') ? 'crates.io' : active.links.demo.includes('youtube') ? 'YouTube' : 'Demo'}
                         </a>
                       )}
                       {active.links.article && (
