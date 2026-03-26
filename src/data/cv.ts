@@ -123,6 +123,20 @@ export const publications = [
 
 export const projects = [
 	{
+		title: 'nook — 予定が"世界"になる箱庭カレンダーアプリ',
+		time: '2026年3月',
+		description: 'GDGoCのハッカソンで開発した、予定・天気・時間をもとに"自分だけの小さな世界"を生成するアプリ。カレンダーの予定が箱庭の中の出来事として表現され、時間帯や天気によって世界が変化します。日常を情報としてではなく、体験として捉え直すことを目指しました。フロントエンドからサーバーまで一貫して担当し、アプリ全体の実装と体験設計に関わりました。',
+		shortDescription: '箱庭カレンダーアプリ',
+		image: '/images/projects/nook.jpg',
+		technologies: ['Flutter', 'Dart', 'Firebase'],
+		links: {
+			website: 'https://nook-lp.netlify.app/',
+			demo: 'https://www.youtube.com/watch?v=pzu5Sb9D3Q8',
+		},
+		tags: ['開催地賞', 'LGTM賞', 'Gitty賞'],
+		category: 'mobile-app' as const,
+	},
+	{
 		title: 'Writto — AI英語ライティング学習アプリ',
 		time: '2026年2月',
 		description: 'AIを活用した英語ライティング学習プラットフォーム。トピック生成から執筆、即時フィードバック、語彙記録、ミス分析まで一貫してサポート。OCRによる手書き英文の採点にも対応。',
@@ -299,6 +313,20 @@ export const projects = [
 ];
 
 export const achievements = [
+	{
+		title: '学生奨励賞 | 電子情報通信学会北海道支部',
+		time: '2026年3月',
+		description: '修士研究を中心とした取り組みが評価され、電子工学・情報通信分野で今後の活躍が期待される学生に贈られる賞を受賞しました。',
+		tags: ['学生奨励賞'],
+		link: 'https://www.ieice.org/hokkaido/?page_id=1542',
+	},
+	{
+		title: 'GDGoC ハッカソン | nook - 予定が"世界"になる箱庭カレンダーアプリ',
+		time: '2026年3月',
+		description: '予定・天気・時間をもとに"自分だけの小さな世界"を生成するアプリを開発。カレンダーの予定が箱庭の中の出来事として表現され、日常を体験として捉え直すことを目指しました。',
+		tags: ['開催地賞', 'LGTM賞', 'Gitty賞'],
+		link: 'https://nook-lp.netlify.app/',
+	},
 	{
 		title: '19th International Workshop on Informatics | A Proposal for LDoS Attack Method Using MPTCP Signal Manipulation',
 		time: '2025年9月',
