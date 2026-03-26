@@ -325,7 +325,7 @@ export const achievements = [
 		link: 'https://www.ieice.org/hokkaido/?page_id=1542',
 	},
 	{
-		title: 'GDGoC ハッカソン | nook - 予定が"世界"になる箱庭カレンダーアプリ',
+		title: '開催地賞・LGTM賞・Gitty賞 | Google Developer Groups on Campus',
 		time: '2026年3月',
 		description: '予定・天気・時間をもとに"自分だけの小さな世界"を生成するアプリを開発。カレンダーの予定が箱庭の中の出来事として表現され、日常を体験として捉え直すことを目指しました。',
 		tags: ['開催地賞', 'LGTM賞', 'Gitty賞'],
