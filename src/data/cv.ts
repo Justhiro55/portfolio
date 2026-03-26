@@ -153,6 +153,7 @@ export const projects = [
 		time: '2026年2月',
 		description: '遠距離恋愛をしているカップル専用のレターアプリ。会えない時間に、気持ちを預けるアプリ。写真とコメントで日常を記録し、大切な人との思い出を残すことができます。',
 		shortDescription: '遠距離カップル向けiOSアプリ',
+		image: '/images/projects/dear.jpeg',
 		technologies: ['Flutter', 'Dart'],
 		links: {
 			website: 'https://dear.knotwith.com/#/',
