@@ -141,6 +141,7 @@ export const projects = [
 		time: '2026年2月',
 		description: 'AIを活用した英語ライティング学習プラットフォーム。トピック生成から執筆、即時フィードバック、語彙記録、ミス分析まで一貫してサポート。OCRによる手書き英文の採点にも対応。',
 		shortDescription: 'AI英語ライティング学習Webアプリ',
+		image: '/images/projects/writto.jpeg',
 		technologies: ['React', 'TypeScript', 'Firebase', 'OpenAI API', 'Tailwind CSS'],
 		links: {
 			website: 'https://writto.knotwith.com/',
@@ -187,6 +188,7 @@ export const projects = [
 		time: '2026年1月',
 		description: 'AIを活用した献立提案アプリ。パーソナライズされた料理提案、買い物リスト自動生成、調理ガイド機能を実装。Flutter/DartによるiOS/Androidフロントエンド開発からFirebaseバックエンド構築まで担当。技育CAMP Vol.18 最優秀賞受賞。',
 		shortDescription: 'AI献立提案モバイルアプリ',
+		image: '/images/projects/mogu.webp',
 		technologies: ['Flutter', 'Dart', 'Firebase', 'AI'],
 		links: {
 			website: 'https://mogu.knotwith.com/#/',
@@ -285,6 +287,7 @@ export const projects = [
 		time: '2023年 - 2025年',
 		description: '大学公認プロジェクト「Funcy」にて学内ポートフォリオサービス「Funport」を約2年間開発。フロントエンド・バックエンドの実装からGCP（Cloud Run, Cloud Build）を用いたインフラ構築、Auth0認証基盤の導入まで担当。後輩への技術指導も経験。',
 		shortDescription: '学内ポートフォリオWebサービス',
+		image: '/images/projects/funport.webp',
 		technologies: ['TypeScript', 'React', 'GCP', 'Auth0'],
 		links: {
 			website: 'https://sites.google.com/view/funcyict/%E3%83%9B%E3%83%BC%E3%83%A0',
