@@ -14,9 +14,12 @@ export async function getStaticPaths({ paginate }): Promise<Astro.getStaticPaths
             date: post.data.date,
             badge: post.data.tags[0],
             excerpt: trimExcerpt(post.data.excerpt),
-            slug: `${template.base}/blog/${post.id}`,
+            slug: `${template.base.replace(/\/$/, '')}/blog/${post.id}`,
         }))
         .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+
+    // 記事が無い場合は空ページを生成しない
+    if (posts.length === 0) return [];
 
     return paginate(posts, {
         pageSize: template.postPerPage,

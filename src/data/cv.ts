@@ -197,31 +197,6 @@ export const projects = [
 		category: 'mobile-app' as const,
 	},
 	{
-		title: 'Kioku — エディタでスキマ時間に学べる単語帳拡張機能',
-		time: '2025年',
-		description: 'VSCode拡張として動作し、プログラミングの合間に単語をタイピングで覚えられる英単語学習アプリ。Ankiのような反復学習を取り入れ、エビングハウスの忘却曲線を利用して効率よく記憶を定着させることを目指しました。',
-		shortDescription: 'VSCode単語帳拡張機能',
-		technologies: ['TypeScript', 'VSCode Extension API'],
-		links: {
-			github: 'https://github.com/Justhiro55/Kioku',
-			demo: 'https://marketplace.visualstudio.com/items?itemName=Justhiro55.kioku&ssr=false#review-details',
-		},
-		category: 'extension' as const,
-	},
-	{
-		title: 'flop — C/C++/Rust向けデバッグ出力切り替えツール',
-		time: '2025年10月',
-		description: 'printf や println! をコマンド一発でコメントアウト・有効化・削除できるデバッグ出力管理ツール。インタラクティブなTUIで直感的に操作できます。crates.ioにてパッケージを公開しています。',
-		shortDescription: 'デバッグ出力管理CLIツール',
-		technologies: ['Rust', 'TUI'],
-		links: {
-			github: 'https://github.com/Justhiro55/flop',
-			article: 'https://zenn.dev/justhiro/articles/7df05cb2064b75',
-			demo: 'https://crates.io/crates/flop-cli',
-		},
-		category: 'cli-tool' as const,
-	},
-	{
 		title: 'httpcat — HTTPステータスを猫で確認できるCLIツール',
 		time: '2025年11月',
 		description: 'HTTPリクエストのステータスコードに応じた猫画像をターミナルに表示するCLIツール。curlやwgetの代わりに、ステータス確認を楽しく行えます。ASCII表示にも対応。crates.ioにてパッケージを公開しています。',
@@ -259,6 +234,31 @@ export const projects = [
 			demo: 'https://crates.io/crates/should-i',
 		},
 		category: 'cli-tool' as const,
+	},
+	{
+		title: 'flop — C/C++/Rust向けデバッグ出力切り替えツール',
+		time: '2025年10月',
+		description: 'printf や println! をコマンド一発でコメントアウト・有効化・削除できるデバッグ出力管理ツール。インタラクティブなTUIで直感的に操作できます。crates.ioにてパッケージを公開しています。',
+		shortDescription: 'デバッグ出力管理CLIツール',
+		technologies: ['Rust', 'TUI'],
+		links: {
+			github: 'https://github.com/Justhiro55/flop',
+			article: 'https://zenn.dev/justhiro/articles/7df05cb2064b75',
+			demo: 'https://crates.io/crates/flop-cli',
+		},
+		category: 'cli-tool' as const,
+	},
+	{
+		title: 'Kioku — エディタでスキマ時間に学べる単語帳拡張機能',
+		time: '2025年',
+		description: 'VSCode拡張として動作し、プログラミングの合間に単語をタイピングで覚えられる英単語学習アプリ。Ankiのような反復学習を取り入れ、エビングハウスの忘却曲線を利用して効率よく記憶を定着させることを目指しました。',
+		shortDescription: 'VSCode単語帳拡張機能',
+		technologies: ['TypeScript', 'VSCode Extension API'],
+		links: {
+			github: 'https://github.com/Justhiro55/Kioku',
+			demo: 'https://marketplace.visualstudio.com/items?itemName=Justhiro55.kioku&ssr=false#review-details',
+		},
+		category: 'extension' as const,
 	},
 	{
 		title: 'ft_transcendence — リアルタイム対戦Pongゲーム',
@@ -313,8 +313,7 @@ export const projects = [
 		shortDescription: '音楽共有iOSアプリ',
 		technologies: ['Swift', 'iOS', 'Beacon', 'Spotify API'],
 		category: 'mobile-app' as const,
-	},
-];
+	}];
 
 export const achievements = [
 	{
@@ -332,13 +331,6 @@ export const achievements = [
 		link: 'https://nook-lp.netlify.app/',
 	},
 	{
-		title: '19th International Workshop on Informatics | A Proposal for LDoS Attack Method Using MPTCP Signal Manipulation',
-		time: '2025年9月',
-		description: 'Proposal of an LDoS attack method using MPTCP signal manipulation. We improved upon conventional attack techniques and studied more effective attack methods.',
-		tags: ['Excellent Paper Award'],
-		link: 'http://www.infsoc.org/conference/iwin2025/',
-	},
-	{
 		title: '技育CAMP Vol.18',
 		time: '2026年1月',
 		description: 'AIを活用した献立提案アプリ「Mogu」を開発。AIによるパーソナライズされた料理提案、買い物リスト自動生成、調理ガイド機能を実装。Flutter/DartによるiOS/Androidのフロントエンド開発からFirebaseを用いたバックエンド構築まで横断的に開発に携わりました。',
@@ -346,9 +338,15 @@ export const achievements = [
 		link: 'https://x.com/geek_pjt/status/2012813371779715109',
 	},
 	{
+		title: '19th International Workshop on Informatics | A Proposal for LDoS Attack Method Using MPTCP Signal Manipulation',
+		time: '2025年9月',
+		description: 'Proposal of an LDoS attack method using MPTCP signal manipulation. We improved upon conventional attack techniques and studied more effective attack methods.',
+		tags: ['Excellent Paper Award'],
+		link: 'http://www.infsoc.org/conference/iwin2025/',
+	},
+	{
 		title: 'GMOインターネット株式会社 kitaQサマーインターン',
 		time: '2024年8月',
 		description: 'ハッカソンにてUI/UXを改善し初心者にもVPSを使いやすくするコンパネの改善案を提案・開発し、最優秀賞を受賞しました。',
 		tags: ['最優秀賞'],
-	},
-];
+	}];

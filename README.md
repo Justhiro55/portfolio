@@ -1,102 +1,51 @@
-# Astro Academia Documentation
+# Portfolio — Hiromichi Hagiwara
 
-## What is Astro Academia?
+個人ポートフォリオサイト。研究業績・プロジェクト・CV を掲載しています。
 
-Astro Academia is a personal academic website built using Astro, a modern static site generator. The website is designed to showcase academic achievements, research papers, blog posts, and a CV. It is fast, responsive, and easy to maintain, making it an ideal platform for academics and researchers to present their work.
+- 公開URL: https://luminous-sundae-8d31f1.netlify.app/
+- ベーステンプレート: [Astro Academia](https://github.com/maiobarbero/astro-academia)
 
-If you find Astro Academia useful or appreciate my work, consider supporting me! Your support helps keep this project maintained and encourages further development. 🚀✨
+## 技術スタック
 
-<a href="https://buymeacoffee.com/maiobarbero" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-yellow.png" alt="Buy Me A Coffee" height="41" width="174"></a>
+Astro 5 / React 19 / Tailwind CSS + daisyUI / Framer Motion
 
-## How to use it
+## 開発
 
-Fork this repository to create your new website starting from this template.
-
-## How to Create a CV Using the `cv.ts` File
-
-The `cv.ts` file located in the `src/data/` directory is used to define the structure and content of your CV. This file exports an object containing various sections of your CV, such as education, experience, publications, and more.
-
-### Example Structure of `cv.ts`
-
-```typescript
-export const cv = {
-  education: [
-    {
-      degree: "Ph.D. in Computer Science",
-      institution: "University of Example",
-      year: "2020",
-    },
-    {
-      degree: "M.Sc. in Computer Science",
-      institution: "University of Example",
-      year: "2016",
-    },
-  ],
-  experience: [
-    {
-      title: "Research Scientist",
-      company: "Example Research Lab",
-      year: "2021-Present",
-    },
-    {
-      title: "Software Engineer",
-      company: "Tech Company",
-      year: "2016-2021",
-    },
-  ],
-  // Add more sections as needed
-};
+```bash
+npm install
+npm run dev      # http://localhost:4321
+npm run build    # dist/ に静的サイトを生成
+npm run preview  # ビルド結果をローカルで確認
 ```
 
-To create or update your CV, modify the `cv.ts` file with your personal information and achievements. The CV will be automatically rendered on the CV page of your website.
+Node は `.nvmrc` のバージョン（22.11.0）を使用します。
 
-## How to Use the `settings.ts` File
+## コンテンツの編集
 
-The `settings.ts` file located in the `src/` directory is used to configure various settings for your Astro Academia website. This file exports an object containing settings such as site title, description, social media links, and more.
+サイトに表示される内容はほぼすべて以下の2ファイルで管理しています。
 
-### Example Structure of `settings.ts`
+| ファイル | 内容 |
+| --- | --- |
+| `src/data/cv.ts` | 職歴 / 学歴 / スキル / 論文 / プロジェクト / 受賞 |
+| `src/settings.ts` | プロフィール、SNSリンク、サイトURL、SEO設定 |
 
-```typescript
-export const settings = {
-  siteTitle: "Astro Academia",
-  siteDescription: "A personal academic website built with Astro.",
-  socialLinks: {
-    twitter: "https://twitter.com/yourusername",
-    github: "https://github.com/yourusername",
-    linkedin: "https://linkedin.com/in/yourusername",
-  },
-  // Add more settings as needed
-};
-```
+- `experiences` / `education` / `publications` / `projects` / `achievements` は **新しい順** に並べる。
+- プロジェクト画像は `public/images/projects/` に置き、`image: '/images/projects/xxx.webp'` の形で参照する。
+- OGP画像は `public/images/og.jpg`（`seo.default_image` で指定）。
 
-To customize your website settings, modify the `settings.ts` file with your desired values. These settings will be used throughout your website to display the appropriate information.
+ブログ記事を追加する場合は `src/content/BlogPosts/` に Markdown を置きます（front matter: `title` / `date` / `excerpt` / `tags`）。記事が1件以上あるとサイドバーに Blog リンクが表示されます。
 
-## Where to Find the Blog Collection and Where to Add New Blog Posts
+## ページ構成
 
-The blog collection is located in the `src/content/BlogPosts/` directory. Each blog post is a Markdown file with a `.md` extension. The blog posts are named sequentially (e.g., `post1.md`, `post2.md`, etc.).
+| パス | ファイル |
+| --- | --- |
+| `/` | `src/pages/index.astro`（Hero・最新プロジェクト3件・受賞） |
+| `/works/` | `src/pages/works.astro` |
+| `/research/` | `src/pages/research.astro` |
+| `/papers/` | `src/pages/papers.astro` |
+| `/cv/` | `src/pages/cv.astro` |
+| `/blog/1/` | `src/pages/blog/[page].astro`（記事がある場合のみ生成） |
 
-### Adding a New Blog Post
+## デプロイ
 
-1. Navigate to the `src/content/BlogPosts/` directory.
-2. Create a new Markdown file for your blog post (e.g., `post1.md`).
-3. Add the content of your blog post using Markdown syntax. Include frontmatter at the top of the file to define metadata such as title, date, and tags.
-
-### Example Blog Post (`post11.md`)
-
-```markdown
----
-title: "New Blog Post"
-date: "2023-10-01"
-tags: ["research", "astro"]
-excerpt: "Some short paragraphs"
----
-
-# New Blog Post
-
-This is the content of the new blog post. Write your article here using Markdown syntax.
-```
-
-Once you have added the new blog post, it will be automatically included in the blog collection and displayed on the blog page of your website.
-
-## Deploy
-The template provides a workflow to deploy the website on Github pages as a static website.
+Netlify（`netlify.toml`）。`main` への push で自動デプロイされます。

@@ -36,5 +36,5 @@ export const template = {
 export const seo = {
 	default_title: 'Hiromichi Hagiwara - Portfolio',
 	default_description: 'Graduate Student at Future University Hakodate and 42Tokyo. Engaged in research on network security and in web application development.',
-	default_image: '/images/astro-academia.png',
+	default_image: '/images/og.jpg',
 }
