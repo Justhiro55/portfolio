@@ -131,6 +131,7 @@ export const projects = [
 		technologies: ['Swift', 'SwiftUI', 'CoreMotion', 'Vision', 'AVFoundation', 'Firebase', 'React'],
 		links: {
 			website: 'https://mogurage-jp.netlify.app',
+			demo: 'https://spajam.jp/result',
 		},
 		tags: ['最優秀賞'],
 		category: 'mobile-app' as const,

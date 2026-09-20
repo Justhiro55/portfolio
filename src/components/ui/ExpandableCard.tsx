@@ -348,7 +348,7 @@ export function ExpandableCards({ projects, carousel = false }: ExpandableCardsP
                           rel="noopener noreferrer"
                         >
                           <ExternalIcon />
-                          {active.links.demo.includes('marketplace') ? 'Marketplace' : active.links.demo.includes('apple') ? 'App Store' : active.links.demo.includes('crates.io') ? 'crates.io' : active.links.demo.includes('youtube') ? 'YouTube' : 'Demo'}
+                          {active.links.demo.includes('spajam') ? 'SPAJAM' : active.links.demo.includes('marketplace') ? 'Marketplace' : active.links.demo.includes('apple') ? 'App Store' : active.links.demo.includes('crates.io') ? 'crates.io' : active.links.demo.includes('youtube') ? 'YouTube' : 'Demo'}
                         </a>
                       )}
                       {active.links.article && (
