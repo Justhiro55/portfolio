@@ -123,6 +123,19 @@ export const publications = [
 
 export const projects = [
 	{
+		title: 'mogumi — 噛むほどクラゲが育つ咀嚼体験アプリ',
+		time: '2026年8月',
+		description: 'SPAJAM2026 第三回予選大会（テーマ「味」）でチーム「Knot」として開発したiOSアプリ。AirPodsの頭部モーションと内カメラから咀嚼を検出し、噛むたびに海のクラゲが拍動して育ちます。咀嚼回数をグラフで見せるのではなく、噛む行為そのものを味わう体験に変えることを狙いました。甘味・酸味・塩味・こく・いつもの5つの海にそれぞれ異なる和音と音色を与え、食事の余韻を海の音として返します。開発全般（iOSアプリ実装、咀嚼検出アルゴリズム、ランディングページ、Firebase連携）を担当し、最優秀賞を受賞しました。',
+		shortDescription: '咀嚼検出クラゲ育成iOSアプリ',
+		image: '/images/projects/mogumi.webp',
+		technologies: ['Swift', 'SwiftUI', 'CoreMotion', 'Vision', 'AVFoundation', 'Firebase', 'React'],
+		links: {
+			website: 'https://mogurage-jp.netlify.app',
+		},
+		tags: ['最優秀賞'],
+		category: 'mobile-app' as const,
+	},
+	{
 		title: 'nook — 予定が"世界"になる箱庭カレンダーアプリ',
 		time: '2026年3月',
 		description: 'GDGoCのハッカソンで開発した、予定・天気・時間をもとに"自分だけの小さな世界"を生成するアプリ。カレンダーの予定が箱庭の中の出来事として表現され、時間帯や天気によって世界が変化します。日常を情報としてではなく、体験として捉え直すことを目指しました。フロントエンドからサーバーまで一貫して担当し、アプリ全体の実装と体験設計に関わりました。',
@@ -316,6 +329,13 @@ export const projects = [
 	}];
 
 export const achievements = [
+	{
+		title: '最優秀賞 | SPAJAM2026 第三回予選大会',
+		time: '2026年8月',
+		description: 'テーマ「味」のもと、AirPodsの頭部モーションと内カメラで咀嚼を検出し、噛むたびにクラゲが育つアプリ「mogumi」をチーム「Knot」で開発。利用場面に沿ったデバイス選択と自前の咀嚼検出ロジック、66種類の組み合わせを持つ図鑑の作り込みが評価され、最優秀賞を受賞しました。',
+		tags: ['最優秀賞'],
+		link: 'https://spajam.jp/result',
+	},
 	{
 		title: '学生奨励賞 | 電子情報通信学会北海道支部',
 		time: '2026年3月',
