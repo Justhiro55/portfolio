@@ -13,10 +13,10 @@ import List from "@/components/ui/List.astro";
     <div class="mb-12">
       <h2 class="text-2xl font-bold mb-4">Low-rate DoS Attacks Using Signal Spoofing</h2>
       <p class="text-lg mb-6">
-        My research focuses on Low-rate DoS (LDoS) attacks targeting TCP connections, which exploit the predictable nature of TCP retransmission timers. These attacks have emerged as a significant security challenge in modern networks.
+        My master's research focused on Low-rate DoS (LDoS) attacks targeting TCP connections, which exploit the predictable nature of TCP retransmission timers. These attacks have emerged as a significant security challenge in modern networks.
       </p>
       <p class="text-lg mb-6">
-        While traditional LDoS attacks primarily use UDP traffic, I investigate TCP-based approaches that can evade protocol-based detection mechanisms. My work extends to Multipath TCP (MPTCP) environments, proposing distributed attack methods using multiple subflows.
+        While traditional LDoS attacks primarily use UDP traffic, I investigated TCP-based approaches that can evade protocol-based detection mechanisms. My work extended to Multipath TCP (MPTCP) environments, proposing distributed attack methods using multiple subflows.
       </p>
     </div>
 
@@ -24,7 +24,7 @@ import List from "@/components/ui/List.astro";
     <section class="mb-12">
       <div class="flex items-center gap-3 mb-8">
         <div class="w-1 h-8 rounded-full bg-brand-blue"></div>
-        <h2 class="text-2xl font-bold text-base-content">Current Projects</h2>
+        <h2 class="text-2xl font-bold text-base-content">Research Projects</h2>
       </div>
       <List listTitle="" listItems={[
         {
@@ -33,7 +33,7 @@ import List from "@/components/ui/List.astro";
         },
         {
           title: "MPTCP Attack Implementation",
-          description: "Developing distributed LDoS attack methods in multipath TCP environments"
+          description: "Distributed LDoS attack methods in multipath TCP environments"
         }
       ]} />
     </section>
@@ -45,10 +45,10 @@ import List from "@/components/ui/List.astro";
         <h2 class="text-2xl font-bold text-base-content">Research Impact</h2>
       </div>
       <p class="text-lg mb-4">
-        My research demonstrates that TCP-based LDoS attacks can effectively suppress target traffic while maintaining lower detection profiles. I have developed optimization techniques for ACK transmission rates and proven the feasibility of distributed attacks using MPTCP's Data Sequence Signal manipulation.
+        My research demonstrated that TCP-based LDoS attacks can effectively suppress target traffic while maintaining lower detection profiles. I developed optimization techniques for ACK transmission rates and demonstrated the feasibility of distributed attacks using MPTCP's Data Sequence Signal manipulation.
       </p>
       <p class="text-lg mb-4">
-        Current work focuses on evaluating attack effectiveness in realistic network environments using mininet simulations, analyzing the impact of subflow numbers and path delay variations on attack performance.
+        I also evaluated attack effectiveness in realistic network environments using mininet simulations, analyzing the impact of subflow numbers and path delay variations on attack performance.
       </p>
     </section>
 

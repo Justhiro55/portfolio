@@ -1,7 +1,7 @@
 export const profile = {
 	fullName: 'Hiromichi Hagiwara',
 	title: '',
-	institute: 'Graduate Student at Future University Hakodate / 42Tokyo',
+	institute: 'Application Engineer at Rakuten Group',
 	author_name: 'Hiromichi Hagiwara',
 	research_areas: [
 		{ title: 'Network Security', description: 'TCPを標的とした最適化したDoS攻撃手法の研究', field: 'computer-science' },
@@ -23,7 +23,7 @@ export const social = {
 }
 
 export const template = {
-	website_url: 'https://luminous-sundae-8d31f1.netlify.app/', // Astro needs to know your site's deployed URL to generate a sitemap. It must start with http:// or https://
+	website_url: 'https://justhiro55.netlify.app/', // Astro needs to know your site's deployed URL to generate a sitemap. It must start with http:// or https://
 	menu_left: false,
 	transitions: true,
 	lightTheme: 'light', // Select one of the Daisy UI Themes or create your own
@@ -35,6 +35,6 @@ export const template = {
 
 export const seo = {
 	default_title: 'Hiromichi Hagiwara - Portfolio',
-	default_description: 'Graduate Student at Future University Hakodate and 42Tokyo. Engaged in research on network security and in web application development.',
+	default_description: 'Application Engineer at Rakuten Group. Background in network security research and web/mobile app development.',
 	default_image: '/images/og.jpg',
 }

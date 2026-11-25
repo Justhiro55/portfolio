@@ -1,10 +1,10 @@
 export const experiences = [
 	{
 		company: '楽天グループ株式会社',
-		time: '2026年4月 -',
-		title: 'アプリケーションエンジニア（新卒）',
+		time: '2026年4月 - 現在',
+		title: 'Application Engineer',
 		location: 'Tokyo, Japan',
-		description: '新卒入社予定',
+		description: '2026年4月に新卒入社。',
 	},
 	{
 		company: '株式会社HERP',
@@ -56,7 +56,7 @@ export const education = [
 		time: '2023年4月 - 2026年3月',
 		degree: '博士前期課程 情報アーキテクチャ領域',
 		location: 'Hokkaido, Japan',
-		description: 'MPTCP(Multipath TCP)に関するネットワークセキュリティ研究を行っています。学部時の研究を発展させ、TCPを標的とする最適化したDoS攻撃手法について研究しています。',
+		description: 'MPTCP(Multipath TCP)に関するネットワークセキュリティ研究を行いました。学部時の研究を発展させ、TCPを標的とする最適化したDoS攻撃手法について研究しました。',
 	},
 	{
 		school: '42Tokyo',
@@ -114,7 +114,7 @@ export const publications = [
 	{
 		title: 'Optimistic ACKing を利用した LDoS 攻撃効果の検証',
 		authors: '萩原 啓道, 久末 瑠紅, 稲村 浩, 石田 繁巳',
-		journal: 'pub.confit.atlas.jp',
+		journal: '2024年 電子情報通信学会ソサイエティ大会',
 		time: '2024年9月',
 		link: 'https://pub.confit.atlas.jp/ja/event/society2024/presentation/A-7-02',
 		abstract: 'Optimistic ACKing機能を悪用したLDoS攻撃の効果を検証し、その脅威レベルと対策について分析を行いました。',

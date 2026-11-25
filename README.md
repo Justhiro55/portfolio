@@ -2,7 +2,7 @@
 
 個人ポートフォリオサイト。研究業績・プロジェクト・CV を掲載しています。
 
-- 公開URL: https://luminous-sundae-8d31f1.netlify.app/
+- 公開URL: https://justhiro55.netlify.app/
 - ベーステンプレート: [Astro Academia](https://github.com/maiobarbero/astro-academia)
 
 ## 技術スタック
