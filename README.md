@@ -42,7 +42,6 @@ Node は `.nvmrc` のバージョン（22.11.0）を使用します。
 | `/` | `src/pages/index.astro`（Hero・最新プロジェクト3件・受賞） |
 | `/works/` | `src/pages/works.astro` |
 | `/research/` | `src/pages/research.astro` |
-| `/papers/` | `src/pages/papers.astro` |
 | `/cv/` | `src/pages/cv.astro` |
 | `/blog/1/` | `src/pages/blog/[page].astro`（記事がある場合のみ生成） |
 
