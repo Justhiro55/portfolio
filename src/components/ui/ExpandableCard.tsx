@@ -20,6 +20,7 @@ interface Project {
     website?: string;
     demo?: string;
     article?: string;
+    video?: string;
   };
 }
 
@@ -351,6 +352,17 @@ export function ExpandableCards({ projects, carousel = false }: ExpandableCardsP
                           {active.links.demo.includes('spajam') ? 'SPAJAM' : active.links.demo.includes('marketplace') ? 'Marketplace' : active.links.demo.includes('apple') ? 'App Store' : active.links.demo.includes('crates.io') ? 'crates.io' : active.links.demo.includes('youtube') ? 'YouTube' : 'Demo'}
                         </a>
                       )}
+                      {active.links.video && (
+                        <a
+                          href={active.links.video}
+                          className="inline-flex items-center gap-1.5 md:gap-2 px-3 md:px-4 py-1.5 md:py-2 text-xs md:text-sm font-medium rounded-lg bg-brand-orange text-white hover:opacity-90 transition-opacity"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <PlayIcon />
+                          PV
+                        </a>
+                      )}
                       {active.links.article && (
                         <a
                           href={active.links.article}
@@ -621,6 +633,12 @@ const ExternalIcon = () => (
     <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
     <polyline points="15 3 21 3 21 9" />
     <line x1="10" y1="14" x2="21" y2="3" />
+  </svg>
+);
+
+const PlayIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <polygon points="6 3 20 12 6 21 6 3" />
   </svg>
 );
 

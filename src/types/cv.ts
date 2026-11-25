@@ -41,6 +41,7 @@ export interface Project {
     demo?: string;
     article?: string;
     website?: string;
+    video?: string;
   };
   tags?: string[];
   category?: 'cli-tool' | 'web-app' | 'mobile-app' | 'extension' | 'other';

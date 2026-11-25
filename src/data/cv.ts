@@ -130,6 +130,8 @@ export const projects = [
 		image: '/images/projects/mingo.webp',
 		technologies: ['Swift', 'watchOS', 'GPS', 'OpenStreetMap', 'Blender'],
 		links: {
+			website: 'https://gleeful-maamoul-dcca76.netlify.app/',
+			video: 'https://drive.google.com/file/d/1BnqwMBq19uqa0yAdfN9hSoJHG3nFoWVx/view?usp=sharing',
 			demo: 'https://spajam.jp/result',
 		},
 		tags: ['最優秀賞'],
