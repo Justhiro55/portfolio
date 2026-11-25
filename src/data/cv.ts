@@ -123,6 +123,19 @@ export const publications = [
 
 export const projects = [
 	{
+		title: 'mingo — 走るたびフラミンゴが色づく運動習慣アプリ',
+		time: '2026年11月',
+		description: 'SPAJAM2026 本戦（テーマ「色」）でチーム「Knot」として開発したiPhone / Apple Watchアプリ。歩いた道が自分の色に染まり、街で出会ったほかの色を"食べる"と相棒のフラミンゴの色が変わり、出会った色は羽根としてコレクションに残ります。運動の成果は実感するまでに時間がかかるという課題に対し、色の変化を運動の即時報酬として設計しました。3Dマップは OpenStreetMap と Blender で表現を検証したうえで、移動中の快適さを優先した軽量な3D表現を採用。最優秀賞を受賞しました。',
+		shortDescription: '色で運動を続けるiPhone / Apple Watchアプリ',
+		image: '/images/projects/mingo.webp',
+		technologies: ['Swift', 'watchOS', 'GPS', 'OpenStreetMap', 'Blender'],
+		links: {
+			demo: 'https://spajam.jp/result',
+		},
+		tags: ['最優秀賞'],
+		category: 'mobile-app' as const,
+	},
+	{
 		title: 'mogumi — 噛むほどクラゲが育つ咀嚼体験アプリ',
 		time: '2026年8月',
 		description: 'SPAJAM2026 第三回予選大会（テーマ「味」）でチーム「Knot」として開発したiOSアプリ。AirPodsの頭部モーションと内カメラから咀嚼を検出し、噛むたびに海のクラゲが拍動して育ちます。咀嚼回数をグラフで見せるのではなく、噛む行為そのものを味わう体験に変えることを狙いました。甘味・酸味・塩味・こく・いつもの5つの海にそれぞれ異なる和音と音色を与え、食事の余韻を海の音として返します。開発全般（iOSアプリ実装、咀嚼検出アルゴリズム、ランディングページ、Firebase連携）を担当し、最優秀賞を受賞しました。',
@@ -330,6 +343,13 @@ export const projects = [
 	}];
 
 export const achievements = [
+	{
+		title: '最優秀賞 | SPAJAM2026 本戦',
+		time: '2026年11月',
+		description: 'テーマ「色」のもと、歩いた道が色に染まり、出会った色で相棒のフラミンゴが変化する運動習慣アプリ「mingo」をチーム「Knot」で開発。色の変化を運動の即時報酬として設計し、最優秀賞を受賞しました。',
+		tags: ['最優秀賞'],
+		link: 'https://spajam.jp/result',
+	},
 	{
 		title: '最優秀賞 | SPAJAM2026 第三回予選大会',
 		time: '2026年8月',
