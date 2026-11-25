@@ -7,7 +7,7 @@
 
 ## 技術スタック
 
-Astro 5 / React 19 / Tailwind CSS + daisyUI / Framer Motion
+Astro 7 / React 19 / Tailwind CSS + daisyUI / Framer Motion
 
 ## 開発
 
@@ -18,7 +18,7 @@ npm run build    # dist/ に静的サイトを生成
 npm run preview  # ビルド結果をローカルで確認
 ```
 
-Node は `.nvmrc` のバージョン（22.11.0）を使用します。
+Node は `.nvmrc` のバージョン（24.22.3）を使用します。
 
 ## コンテンツの編集
 

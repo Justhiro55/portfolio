@@ -9,24 +9,27 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/react": "^4.1.4",
-    "@astrojs/rss": "^4.0.11",
-    "@astrojs/sitemap": "^3.2.1",
-    "@astrojs/tailwind": "^5.1.4",
+    "@astrojs/react": "^7.1.9",
+    "@astrojs/rss": "^4.0.19",
+    "@astrojs/sitemap": "^3.7.6",
     "@types/react": "^19.0.7",
     "@types/react-dom": "^19.0.3",
-    "astro": "^5.13.5",
+    "astro": "^7.4.13",
+    "autoprefixer": "^10.7.0",
     "clsx": "^2.1.1",
     "framer-motion": "^12.34.0",
     "html-escaper": "^3.0.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "tailwind-merge": "^3.4.1",
-    "tailwindcss": "^3.4.17",
+    "tailwindcss": "^3.4.19",
     "theme-change": "^2.5.0"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.16",
     "daisyui": "^4.12.23"
+  },
+  "overrides": {
+    "postcss-selector-parser": "^6.1.6"
   }
 }
